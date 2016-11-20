@@ -32,7 +32,6 @@
             <livery>
                 <file type="string">bombardier</file>
             </livery>
-            <variant type="int">0</variant>
             <limits>
                 <!--According to the notes next to the flaps-->
                 <max-flap-extension-speed>
@@ -66,16 +65,10 @@
                     <position-z-m>-1.59743</position-z-m>
                     <jetway-hood-deg>5</jetway-hood-deg>
             </door>
-   <!--  <door>
-       <position-x-m type="float">-16.836</position-x-m>
-       <position-y-m type="float">-2.9</position-y-m>
-       <position-z-m type="float">-3.7</position-z-m>
-       <jetway-hood-deg type="float">9</jetway-hood-deg>
-</door>-->
 		</model>
 		
 		<startup>
-            <splash-texture>Aircraft/CSeries/CS100.png</splash-texture>
+                    <splash-texture>Aircraft/CSeries/CS100.png</splash-texture>
 		</startup>
 		
         <systems>
@@ -164,7 +157,7 @@
                         <binding>
                         <command>nasal</command>
                             <script>
-                            var mal = gui.Dialog.new("/sim/gui/dialogs/E-jet-family[0]/menu/dialog", 
+                            var mal = gui.Dialog.new("/sim/gui/dialogs/CS100/menu/dialog", 
                                             "Aircraft/CSeries/Dialogs/operations-dlg.xml");
         				mal.open();
                             </script>
@@ -331,11 +324,6 @@
             <brake-left-cmd-norm alias="/controls/gear/brake-left" />
             <brake-right-cmd-norm alias="/controls/gear/brake-right" />
         </copilot>
-<!---        <aileron-cmd-norm type="double">0</aileron-cmd-norm>
--        <tiller-steer-deg type="float">0</tiller-steer-deg>
--        <nose-gear-steer-deg type="double">0</nose-gear-steer-deg>
--        <brake-left-cmd-norm type="float">0</brake-left-cmd-norm>
--        <brake-right-cmd-norm type="float">0</brake-right-cmd-norm>-->
     </fcs>
 
             <input>
@@ -352,22 +340,6 @@
                         <property>/controls/engines/engine[1]/reverser-cmd</property>
                     </binding>
                     </key>
-                    <key n="268">
-        			<name>F12</name>
-        			<desc>Radio Stack</desc>
-          			<binding>
-            			    <command>nasal</command>
-				    <script>dialogs.Radio.toggle()</script>
-          			</binding>
-     	 		</key>
-                <key n="267">
-				<name>F11</name>
-				<desc>Open autopilot dialog</desc>
-				<binding>
-					<command>nasal</command>
-					<script>dialogs.ap_settings.toggle()</script>
-				</binding>
-			</key>
                    <key n="108">
 				<name>l</name>
 				<desc>toggle landing lights</desc>

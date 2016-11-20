@@ -176,23 +176,6 @@
 					<value>3</value> <!-- UP -->
 				</binding>
 			</key>
-              <key n="268">
-        			<name>F12</name>
-        			<desc>Radio Stack</desc>
-          			<binding>
-            			    <command>nasal</command>
-				    <script>dialogs.Radio.toggle()</script>
-          			</binding>
-     	 		</key>
-          
-             <key n="267">
-				<name>F11</name>
-				<desc>Open autopilot dialog</desc>
-				<binding>
-					<command>nasal</command>
-					<script>dialogs.ap_settings.toggle()</script>
-				</binding>
-			</key>
               <key n="108">
 				<name>l</name>
 				<desc>toggle landing lights</desc>
@@ -210,40 +193,6 @@
 				</binding>
 	    		</key>
 
-              <key n="91">
-
-				<name>[</name>
-
-				<desc>Decrease flaps.</desc>
-
-				<binding>
-
-					<command>property-adjust</command>
-
-					<property>/controls/flight/flaps</property>
-
-					<step type="double">-0.125</step>
-
-				</binding>
-
-			</key>
-
-			<key n="93">
-
-				<name>]</name>
-
-				<desc>Increase flaps.</desc>
-
-				<binding>
-
-					<command>property-adjust</command>
-
-					<property>/controls/flight/flaps</property>
-
-					<step type="double">0.125</step>
-
-				</binding>
-			</key>
                 </keyboard>
             </input>
 
