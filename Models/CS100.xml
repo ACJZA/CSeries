@@ -62,8 +62,9 @@
 
 
 <!-- Lights -->
+<!--NAV Lights-->
 	<model>
-		<name>Left nav light</name>
+		<name>nav-light-left</name>
 		<path>Aircraft/CSeries/Models/Lights/rednav.xml</path>
 		<offsets>
                         <x-m>2.3189</x-m>
@@ -72,7 +73,16 @@
 		</offsets>
 	</model>
 	<model>
-		<name>Right nav light</name>
+		<name>nav-light-left-als</name>
+		<path>Aircraft/CSeries/Models/Effects/Lights/red-navlight.xml</path>
+		<offsets>
+                        <x-m>2.3189</x-m>
+			<y-m>-16.00252</y-m>
+			<z-m>-0.95182</z-m>
+		</offsets>
+	</model>
+	<model>
+		<name>nav-light-right</name>
 		<path>Aircraft/CSeries/Models/Lights/greennav.xml</path>
 		<offsets>
                         <x-m>2.3189</x-m>
@@ -81,7 +91,16 @@
 		</offsets>
 	</model>
 	<model>
-		<name>Left strobe light</name>
+		<name>nav-light-right-als</name>
+		<path>Aircraft/CSeries/Models/Effects/Lights/green-navlight.xml</path>
+		<offsets>
+                        <x-m>2.3189</x-m>
+			<y-m>16.00252</y-m>
+			<z-m>-0.95182</z-m>
+		</offsets>
+	</model>
+	<model>
+		<name>strobe-light-left</name>
 		<path>Aircraft/CSeries/Models/Lights/strobe.xml</path>
 		<offsets>
                         <x-m>2.3189</x-m>
@@ -90,7 +109,16 @@
 		</offsets>
 	</model>
 	<model>
-		<name>Right strobe light</name>
+		<name>strobe-light-left-als</name>
+		<path>Aircraft/CSeries/Models/Effects/Lights/left-strobe.xml</path>
+		<offsets>
+                        <x-m>2.3189</x-m>
+			<y-m>-16.00252</y-m>
+			<z-m>-0.95182</z-m>
+		</offsets>
+	</model>
+	<model>
+		<name>strobe-light-right</name>
 		<path>Aircraft/CSeries/Models/Lights/strobe.xml</path>
 		<offsets>
                         <x-m>2.3189</x-m>
@@ -99,7 +127,16 @@
 		</offsets>
 	</model>
 	<model>
-		<name>Bottom Beacon light</name>
+		<name>strobe-light-right-als</name>
+		<path>Aircraft/CSeries/Models/Effects/Lights/right-strobe.xml</path>
+		<offsets>
+                        <x-m>2.3189</x-m>
+			<y-m>16.00252</y-m>
+			<z-m>-0.95182</z-m>
+		</offsets>
+	</model>
+	<model>
+		<name>beacon-light-bottom</name>
 		<path>Aircraft/CSeries/Models/Lights/beacon.xml</path>
 		<offsets>
 			<x-m>-3.0078</x-m>
@@ -108,8 +145,26 @@
 		</offsets>
 	</model>
 	<model>
-		<name>Bottom Beacon light</name>
+		<name>beacon-light-bottom-als</name>
+		<path>Aircraft/CSeries/Models/Effects/Lights/beacon.xml</path>
+		<offsets>
+			<x-m>-3.0078</x-m>
+			<y-m>0</y-m>
+			<z-m>-4.53916</z-m>
+		</offsets>
+	</model>
+	<model>
+		<name>beacon-light-top</name>
 		<path>Aircraft/CSeries/Models/Lights/beacon.xml</path>
+		<offsets>
+			<x-m>-3.0078</x-m>
+			<y-m>0</y-m>
+			<z-m>-0.335</z-m>
+		</offsets>
+	</model>
+	<model>
+		<name>beacon-light-top-als</name>
+		<path>Aircraft/CSeries/Models/Effects/Lights/beacon.xml</path>
 		<offsets>
 			<x-m>-3.0078</x-m>
 			<y-m>0</y-m>
@@ -147,7 +202,44 @@
                         <heading-deg>-30</heading-deg>
 		</offsets>
 	</model>
+        <!--Select Animation-->
+    <!-- ================================================================== -->
+    <!-- ALS Lighting                                                       -->
+    <!-- ================================================================== -->
 
+    <animation>
+        <type>select</type>
+        <object-name>nav-light-left-als</object-name>
+        <object-name>nav-light-right-als</object-name>
+        <object-name>strobe-light-left-als</object-name>
+        <object-name>strobe-light-right-als</object-name>
+        <object-name>beacon-light-top-als</object-name>
+        <object-name>beacon-light-bottom-als</object-name>
+        <nopreview/>
+        <condition>
+                <property>/sim/rendering/shaders/skydome</property>
+        </condition>
+    </animation>
+
+    <!-- ================================================================== -->
+    <!-- Basic And Rembrandt Lighting                                       -->
+    <!-- ================================================================== -->
+
+    <animation>
+        <type>select</type>
+        <object-name>nav-light-left</object-name>
+        <object-name>nav-light-right</object-name>
+        <object-name>strobe-light-left</object-name>
+        <object-name>strobe-light-right</object-name>
+        <object-name>beacon-light-top</object-name>
+        <object-name>beacon-light-bottom</object-name>
+        <nopreview/>
+        <condition>
+                <not>
+                    <property>/sim/rendering/shaders/skydome</property>
+                </not>
+        </condition>
+    </animation>
 
 <!-- Engine fire -->
 	<model>
@@ -203,8 +295,6 @@
     <object-name>hstab</object-name>
     <object-name>elevatorL</object-name>
     <object-name>elevatorR</object-name>
-    <object-name>vstab</object-name>
-    <object-name>rudder</object-name>
     <object-name>cargodoor</object-name>
     <object-name>cargoRdoor</object-name>
     <object-name>doorFL</object-name>
@@ -222,6 +312,11 @@
     <object-name>nacelleL</object-name>
     <object-name>nacelleR</object-name>
     <object-name>enginefix.</object-name>
+  </effect>
+ <effect>
+	<inherits-from>Aircraft/CSeries/Models/Effects/reflectlightmap</inherits-from>
+    <object-name>vstab</object-name>
+    <object-name>rudder</object-name>
   </effect>
   <effect>
        <inherits-from>Aircraft/CSeries/Models/Effects/reflectglass</inherits-from>
@@ -290,6 +385,11 @@
     <property-base>sim/model/livery</property-base>
     <texture-prop>texture-engine</texture-prop>
     <texture>texture-engine.png</texture>
+        <emission>
+            <r>0</r>
+            <g>0</g>
+            <b>0</b>
+        </emission>
   </animation>
 
 	<animation>
@@ -342,11 +442,11 @@
 	<!--Pushback-->
  <model>
   <name>Pushback</name>
-  <path>Models/Airport/Pushback/Goldhofert.xml</path>
+  <path>Goldhofert.xml</path>
   <offsets>
-   <x-m>-13.95034</x-m>
+   <x-m>-13.95085</x-m>
    <y-m>0</y-m>
-   <z-m>-5.60202</z-m>
+   <z-m>-5.6</z-m>
   </offsets>
  </model>
  <!--Tyresmoke-->

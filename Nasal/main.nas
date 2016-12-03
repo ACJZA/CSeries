@@ -9,7 +9,27 @@
 # If you need to run nasal as loop, add it in this function
 ############################################
 global_system = func{
-
+#Lights
+if(getprop("/systems/electrical/outputs/nav-lights")>=15){
+setprop("/systems/electrical/outputs/nav-lights-norm", 1);
+}else{
+setprop("/systems/electrical/outputs/nav-lights-norm", 0);
+}
+if(getprop("/systems/electrical/outputs/beacon")>=15){
+setprop("/systems/electrical/outputs/beacon-norm", 1);
+}else{
+setprop("/systems/electrical/outputs/beacon-norm", 0);
+}
+if(getprop("/systems/electrical/outputs/strobe")>=15){
+setprop("/systems/electrical/outputs/strobe-norm", 1);
+}else{
+setprop("/systems/electrical/outputs/strobe-norm", 0);
+}
+if(getprop("/systems/electrical/outputs/logo-light")>=15){
+setprop("/sim/model/lights/logo-lightmap", 1);
+}else{
+setprop("/sim/model/lights/logo-lightmap", 0);
+}
 #function for APU knob
 if(getprop("/engines/apu/running")){
 setprop("/controls/APU/knob", getprop("/controls/APU/off-on") );
