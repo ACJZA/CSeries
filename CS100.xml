@@ -21,14 +21,13 @@
         max cruise:470kts
         -->
             
-            <!--THE COORDINATES NEED TO BE ADJUSTED!!-->
 
     <airplane mass="90000">
 
     <!-- Approach configuration -->
-        <approach speed="100" aoa="3.0" fuel="0.6"> <!--no data avail?-->
-		<control-setting axis="/controls/engines/engine[0]/throttle-lever" value="0.7" />
-		<control-setting axis="/controls/engines/engine[1]/throttle-lever" value="0.7" />
+        <approach speed="110" aoa="6.0" fuel="0.6"> <!--no data avail?-->
+		<control-setting axis="/controls/engines/engine[0]/throttle-lever" value="0.3" />
+		<control-setting axis="/controls/engines/engine[1]/throttle-lever" value="0.3" />
           <control-setting axis="/controls/flight/flaps" value="1.0"/>
           <control-setting axis="/controls/gear/gear-down" value="1"/>
         <!--  <solve-weight idx="0" weight="360"/>
@@ -72,7 +71,7 @@
 	<mstab x="2.7662" y="1.5" z="-3.2325" length="5" chord="5.4" sweep="14" taper=".615" dihedral="9" camber=".1" incidence="3" twist="-2.0" idrag="1.0">
 		<stall aoa="10.0" width="7" peak="1.5" />
 		<flap0 start="0.05" end="0.99" lift="1.4" drag="2.0" />
-		<spoiler start="0.18" end="0.94" lift="0.0" drag="2.5" />
+		<spoiler start="0.18" end="0.94" lift="0.0" drag="6" />
 		<control-input axis="/controls/flight/flaps" control="FLAP0" />
 		<control-input axis="/surface-positions/spoiler-ground-pos-norm" control="SPOILER" />
 		<control-output control="FLAP0" prop="/surface-positions/flap-pos-norm" />
@@ -86,7 +85,7 @@
 		<stall aoa="8.0" width="5" peak="0.8" />
 		<flap0 start="0.0" end="0.51" lift="1.4" drag="2.5" />
 		<flap1 start="0.51" end="0.8" lift="1.35" drag="1.3" />
-		<spoiler start="0.06" end="0.31" lift="0.0" drag="5.0" />
+		<spoiler start="0.06" end="0.31" lift="0.0" drag="10.0" />
 		<control-input axis="/controls/flight/flaps" control="FLAP0" />
 		<control-input axis="/controls/flight/aileron" control="FLAP1" split="true" />
 		<control-input axis="/controls/flight/aileron-trim" control="FLAP1" split="true" />
@@ -174,11 +173,6 @@
           <control-output control="EXTEND" prop="/gear/gear[2]/position-norm"/>
           <control-speed control="EXTEND" transition-time="7"/>
        </gear>
-       <!--Engines--><!--CAUSING SEVERE BANKING ON TAKEOFF-->
-      <!-- <gear x="5.51453" y="5.86412" z="-5.24404" skid="true" >
-       </gear>
-       <gear x="5.51453" y="-5.86412" z="-5.24404" skid="true" >
-       </gear>-->
 
        <!--No tank data available-->
        <tank x="2.5" y="3" z="-3.1259" jet="true" capacity="5000"/>

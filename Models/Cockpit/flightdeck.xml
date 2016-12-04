@@ -287,7 +287,7 @@
                     <y-m>0.0</y-m>
 		</center>
 	</animation>
-        
+        <!--GEAR-->
         <!--Gear lever-->
 	<animation>
 		<type>pick</type>
@@ -316,7 +316,140 @@
 			<z-m>0.11003</z-m>
 		</center>
 	</animation>
-        
+        <!--Altn Gear-->
+        <!--Lock-->
+	<animation>
+		<type>pick</type>
+		<object-name>altngear.lock</object-name>
+		<action>
+			<button>0</button>
+			<repeatable type="bool">false</repeatable>
+			<binding>
+                            <condition>
+                                <not>
+                                    <property>/controls/gear/alt-gear</property>
+                                    </not>
+                                </condition>
+				<command>property-toggle</command>
+                                <property>/controls/gear/alt-gear-lock</property>
+			</binding>
+		</action>
+	</animation>
+	<animation>
+		<type>rotate</type>
+		<object-name>altngear.lock</object-name>
+                                <property>/controls/gear/alt-gear-lock</property>
+		<factor>80</factor>
+		<axis>
+			<x1-m>-0.63917</x1-m>
+			<y1-m>0.01099</y1-m>
+			<z1-m>0.15298</z1-m>
+			<x2-m>-0.63911</x2-m>
+			<y2-m>0.01099</y2-m>
+			<z2-m>0.13535</z2-m>
+		</axis>
+	</animation>
+	<animation>
+		<type>pick</type>
+		<object-name>altngearswitch</object-name>
+		<action>
+			<button>0</button>
+			<repeatable type="bool">false</repeatable>
+			<binding>
+                            <condition>
+                                    <property>/controls/gear/alt-gear-lock</property>
+                                </condition>
+				<command>property-toggle</command>
+                                <property>/controls/gear/alt-gear</property>
+			</binding>
+		</action>
+	</animation>
+	<animation>
+		<type>rotate</type>
+		<object-name>altngearswitch</object-name>
+                                <property>/controls/gear/alt-gear</property>
+		<factor>40</factor>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+		<center>
+                    <x-m>-0.64035</x-m>
+			<z-m>0.14485</z-m>
+		</center>
+	</animation>
+        <!--Autobrake-->
+	<animation>
+		<type>pick</type>
+		<object-name>autobrake.knob</object-name>
+		<action>
+			<button>0</button>
+			<repeatable type="bool">false</repeatable>
+			<binding>
+				<command>property-adjust</command>
+				<property>autopilot/autobrake/step</property>
+				<step type="int">1</step>
+				<max>3</max>
+			</binding>
+		</action>
+		<action>
+			<button>1</button>
+			<repeatable type="bool">false</repeatable>
+			<binding>
+				<command>property-adjust</command>
+				<property>autopilot/autobrake/step</property>
+				<step type="int">-1</step>
+				<min>-1</min>
+			</binding>
+		</action>
+	</animation>
+	<animation>
+		<type>rotate</type>
+		<object-name>autobrake.knob</object-name>
+		<property>autopilot/autobrake/step</property>
+		<interpolation>
+			<entry><ind>-1</ind><dep>-40</dep></entry>
+			<entry><ind>0</ind><dep>0</dep></entry>
+			<entry><ind>1</ind><dep>46</dep></entry>
+			<entry><ind>2</ind><dep>86</dep></entry>
+			<entry><ind>3</ind><dep>115</dep></entry>
+		</interpolation>
+		<axis>
+			<x1-m>-0.61609</x1-m>
+			<y1-m>0.00</y1-m>
+			<z1-m>0.06462</z1-m>
+			<x2-m>-0.63017</x2-m>
+			<y2-m>0.000</y2-m>
+			<z2-m>0.06281</z2-m>
+		</axis>
+	</animation>
+        <!--Nose wheel steering-->
+	<animation>
+		<type>pick</type>
+		<object-name>gear.nosesteer</object-name>
+		<action>
+			<button>0</button>
+			<repeatable type="bool">false</repeatable>
+			<binding>
+				<command>property-toggle</command>
+                                <property>/controls/gear/tiller-enabled</property>
+			</binding>
+		</action>
+	</animation>
+        <!--Gear horn-->
+	<animation>
+		<type>pick</type>
+		<object-name>gearhorn.off</object-name>
+		<action>
+			<button>0</button>
+			<repeatable type="bool">false</repeatable>
+			<binding>
+				<command>property-toggle</command>
+                                <property>/controls/gear/horn</property>
+			</binding>
+		</action>
+	</animation>
         <!--Cutoff-->
 	<animation>
 		<type>pick</type>
@@ -1397,6 +1530,18 @@
 
 <!-- MFDL -->
 
+
+<animation>
+  <type>select</type>
+  <object-name>mfdLnav.off</object-name>
+  <object-name>mfdRnav.off</object-name>
+  <condition>
+    <less-than-equals>
+    <property>/systems/electrical/left-bus</property>
+    <value>10</value>
+    </less-than-equals>
+  </condition>
+</animation>
 <animation>
   <type>select</type>
   <object-name>white</object-name>

@@ -1207,6 +1207,7 @@
         <mode>looped</mode>
         <type>avionics</type>
         <condition>
+                <property>/controls/gear/horn</property>
             <less-than-equals>
                 <property>position/altitude-agl-ft</property>
                 <value>400</value>

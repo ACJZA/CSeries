@@ -263,6 +263,7 @@
             <ground-lift-dump type="int">1</ground-lift-dump>
         </flight>
         <gear>
+            <horn type="bool">true</horn>
             <brake-parking type="bool">true</brake-parking>
             <enable-tiller type="bool">true</enable-tiller>
             <tiller-steer-deg type="float">0</tiller-steer-deg>
@@ -360,13 +361,14 @@
             </input>
     <nasal>
         <cseries>
+            <file>Aircraft/CSeries/Models/Cockpit/ND.nas</file>    
             <file>Aircraft/CSeries/Nasal/main.nas</file>
             <file>Aircraft/CSeries/Nasal/engines.nas</file>
             <file>Aircraft/CSeries/Nasal/electrical.nas</file>
             <file>Aircraft/CSeries/Nasal/systems.nas</file>
             <file>Aircraft/CSeries/Nasal/doors.nas</file>
             <file>Aircraft/CSeries/Nasal/CS100liveries.nas</file>
-            <file>Aircraft/CSeries/Nasal/registration.nas</file>      
+            <file>Aircraft/CSeries/Nasal/registration.nas</file>  
 		</cseries>
 		<itaf>
             <file>Aircraft/CSeries/Nasal/it-autoflight.nas</file>
