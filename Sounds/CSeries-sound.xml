@@ -1,793 +1,173 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--These sounds are from the CRJ700-family, a huge huge thanks to its creators!!-->
 
 <PropertyList>
-
-<!-- cockpit x=22.5 y=0 z=0.78   -->
-
+	<params>
+		<groundspeed-kt>velocities/groundspeed-kt</groundspeed-kt>
+		<airspeed-kt>velocities/airspeed-kt</airspeed-kt>
+	</params>
 	<fx>
-
-
-
- <!-- =============================================================== -->
- <!-- ENGINE OUTSIDE:                                                  -->
- <!-- =============================================================== -->
-<!-- #########################   ENGINE: JET (bass) ################################ -->
-		<engine>
-			<name>left engine</name>
-			<path>Aircraft/CSeries/Sounds/res/jet.wav</path>
-			<mode>looped</mode>
-			<condition>
-					<property>controls/engines/engine[0]/running</property>
-				<not>
-					<property>sim/current-view/internal</property>
-				</not>
-			</condition>
-			<volume>
-				<property>engines/engine[0]/rpm</property>
-				<factor>0.000028571</factor>
-				<min>0.0</min>
-				<max>1</max>
-			</volume>
-			<position>
-				<x>15</x>
-				<y>-5.7</y>
-				<z>-1.1</z>
-			</position>
-			<reference-dist>50.0</reference-dist>
-			<max-dist>500.0</max-dist>
-		</engine>
-
-		<engine>
-			<name>right engine</name>
-			<path>Aircraft/CSeries/Sounds/res/jet.wav</path>
-			<mode>looped</mode>
-			<condition>
-					<property>controls/engines/engine[1]/running</property>
-				<not>
-					<property>sim/current-view/internal</property>
-				</not>
-			</condition>
-			<volume>
-				<property>engines/engine[1]/rpm</property>
-				<factor>0.000028571</factor>
-				<min>0.0</min>
-				<max>1</max>
-			</volume>
-			<position>
-				<x>15</x>
-				<y>5.7</y>
-				<z>-1.1</z>
-			</position>
-			<reference-dist>50.0</reference-dist>
-			<max-dist>1000.0</max-dist>
-		</engine>
-
-
-
-
-<!-- #########################   ENGINE: Turbine  (Treble) ################################ -->
-
-		<engine>
-			<name>left n1_2</name>
-			<path>Aircraft/CSeries/Sounds/res/turbine.wav</path>
-			<mode>looped</mode>
-			<condition>
-				<greater-than>
-					<property>engines/engine[0]/rpm</property>
-					<value>2</value>
-				</greater-than>
-				<not>
-					<property>sim/current-view/internal</property>
-				</not>
-			</condition>
-			<pitch>
-				<property>/engines/engine[0]/rpm</property>
-				<offset>0</offset>
-				<factor>0.02</factor>
-				<min>0.0</min>
-				<max>2.0</max>
-			</pitch>
-			<volume>
-				<property>engines/engine[0]/rpm</property>
-				<factor>0.01</factor>
-				<min>0</min>
-				<max>0.6</max>
-			</volume>
-			<position>
-				<x>15</x>
-				<y>-5.7</y>
-				<z>-1.1</z>
-			</position>
-			<reference-dist>50.0</reference-dist>
-			<max-dist>1000.0</max-dist>
-		</engine>
-		<engine>
-			<name>right n1_2</name>
-			<path>Aircraft/CSeries/Sounds/res/turbine.wav</path>
-			<mode>looped</mode>
-			<condition>
-				<greater-than>
-					<property>engines/engine[1]/rpm</property>
-					<value>2</value>
-				</greater-than>
-				<not>
-					<property>sim/current-view/internal</property>
-				</not>
-			</condition>
-			<pitch>
-				<property>/engines/engine[1]/rpm</property>
-				<offset>0</offset>
-				<factor>0.02</factor>
-				<min>0.0</min>
-				<max>2.0</max>
-			</pitch>
-			<volume>
-				<property>engines/engine[1]/rpm</property>
-				<factor>0.01</factor>
-				<min>0</min>
-				<max>0.6</max>
-			</volume>
-			<position>
-				<x>15</x>
-				<y>5.7</y>
-				<z>-1.1</z>
-			</position>
-			<reference-dist>50.0</reference-dist>
-			<max-dist>1000.0</max-dist>
-		</engine>
-
-	
-
-<!-- #########################   ENGINE: Rever Thrust  ################################ -->
-
-		<engine>
-			<name>left engine Revers</name>
-			<path>Aircraft/CSeries/Sounds/res/reverser2.wav</path>
-			<mode>looped</mode>
-			<condition>
-				<property>engines/engine[0]/reverser</property>
-				<not>
-					<property>sim/current-view/internal</property>
-				</not>
-			</condition>
-			<volume>
-				<property>engines/engine[0]/thrust_lb</property>
-				<factor>0.000068571</factor>
-				<type>abs</type>
-				<min>0.0</min>
-				<max>1.5</max>
-			</volume>
-			<!--volume>
-			<property>sim/sound/effects/volume</property>
-			</volume-->
-			<position>
-				<x>15</x>
-				<y>-5.7</y>
-				<z>-1.1</z>
-			</position>
-			<reference-dist>50.0</reference-dist>
-			<max-dist>1000.0</max-dist>
-		</engine>
-
-		<engine>
-			<name>right engine Revers</name>
-			<path>Aircraft/CSeries/Sounds/res/reverser2.wav</path>
-			<mode>looped</mode>
-			<condition>
-				<property>engines/engine[1]/reverser</property>
-				<not>
-					<property>sim/current-view/internal</property>
-				</not>
-			</condition>
-			<volume>
-				<property>engines/engine[1]/thrust_lb</property>
-				<factor>0.000068571</factor>
-				<type>abs</type>
-				<min>0.0</min>
-				<max>1.5</max>
-			</volume>
-			<!--volume>
-			<property>sim/sound/effects/volume</property>
-			</volume-->
-			<position>
-				<x>15</x>
-				<y>5.7</y>
-				<z>-1.1</z>
-			</position>
-			<reference-dist>50.0</reference-dist>
-			<max-dist>1000.0</max-dist>
-		</engine>
-
-
-
-
-
- <!-- =============================================================== -->
- <!-- ENGINE INSIDE:                                                  -->
- <!-- =============================================================== -->
-
-		<engine>
-			<name>inside left engine</name>
-			<path>Aircraft/CSeries/Sounds/res/jet.wav</path>
-			<mode>looped</mode>
-			<condition>
-					<property>controls/engines/engine[0]/running</property>
-				<property>sim/current-view/internal</property>
-			</condition>
-			<volume>
-				<property>engines/engine[0]/rpm</property>
-				<factor>0.000021428</factor>
-				<min>0.0</min>
-				<max>1</max>
-			</volume>
-
-
-			<position>
-				<x>15</x>
-				<y>-5.7</y>
-				<z>-1.1</z>
-			</position>
-			<reference-dist>1.0</reference-dist>
-			<max-dist>50.0</max-dist>
-		</engine>
-
-		<engine>
-			<name>inside right engine</name>
-			<path>Aircraft/CSeries/Sounds/res/jet.wav</path>
-			<mode>looped</mode>
-			<condition>
-					<property>controls/engines/engine[1]/running</property>
-				<property>sim/current-view/internal</property>
-			</condition>
-			<volume>
-				<property>engines/engine[1]/rpm</property>
-				<factor>0.000021428</factor>
-				<min>0.0</min>
-				<max>1</max>
-			</volume>
-
-			<position>
-				<x>15</x>
-				<y>5.7</y>
-				<z>-1.1</z>
-			</position>
-			<reference-dist>1.0</reference-dist>
-			<max-dist>50.0</max-dist>
-		</engine>
-
-		<engine>
-			<name>inside left n1_2</name>
-			<path>Aircraft/CSeries/Sounds/res/turbine.wav</path>
-			<mode>looped</mode>
-			<condition>
-				<greater-than>
-					<property>engines/engine[0]/rpm</property>
-					<value>2</value>
-				</greater-than>
-				<property>sim/current-view/internal</property>
-			</condition>
-			<pitch>
-				<property>/engines/engine[0]/rpm</property>
-				<offset>0</offset>
-				<factor>0.02</factor>
-				<min>0.0</min>
-				<max>2.0</max>
-			</pitch>
-			<volume>
-				<property>engines/engine[0]/rpm</property>
-				<factor>0.0025</factor>
-				<min>0</min>
-				<max>1.6</max>
-			</volume>
-
-			<position>
-				<x>15</x>
-				<y>-5.7</y>
-				<z>-1.1</z>
-			</position>
-			<reference-dist>25.0</reference-dist>
-			<max-dist>50.0</max-dist>
-		</engine>
-		
-		<engine>
-			<name>inside right n1_2</name>
-			<path>Aircraft/CSeries/Sounds/res/turbine.wav</path>
-			<mode>looped</mode>
-			<condition>
-				<greater-than>
-					<property>engines/engine[1]/rpm</property>
-					<value>2</value>
-				</greater-than>
-				<property>sim/current-view/internal</property>
-
-			</condition>
-			<pitch>
-				<property>/engines/engine[1]/rpm</property>
-				<offset>0</offset>
-				<factor>0.02</factor>
-				<min>0.0</min>
-				<max>2.0</max>
-			</pitch>
-			<volume>
-				<property>engines/engine[1]/rpm</property>
-				<factor>0.0025</factor>
-				<min>0</min>
-				<max>1.6</max>
-			</volume>
-
-			<position>
-				<x>15</x>
-				<y>5.7</y>
-				<z>-1.1</z>
-			</position>
-			<reference-dist>1.0</reference-dist>
-			<max-dist>50.0</max-dist>
-		</engine>
-		
-		
-		<engine>
-			<name>inside left buzz</name>
-			<path>Aircraft/CSeries/Sounds/res/a320_eng_buzz.wav</path>
-			<mode>looped</mode>
-			<condition>
-				<greater-than>
-					<property>engines/engine[0]/rpm</property>
-					<value>2</value>
-				</greater-than>
-				<property>sim/current-view/internal</property>
-			</condition>
-			<pitch>
-				<property>/engines/engine[0]/rpm</property>
-				<offset>0.0</offset>
-				<factor>0.01</factor>
-				<min>0</min>
-				<max>1.0</max>
-			</pitch>
-			<!--volume>
-				<internal>dt_play</internal>
-				<factor>0.25</factor>
-				<min>0</min>
-				<max>1.6</max>
-			</volume-->
-			<volume>
-				<property>/engines/engine[1]/rpm</property>
-				<offset>0.0</offset>
-				<factor>0.006</factor>
-				<min>0</min>
-				<max>0.6</max>
-			</volume>
-
-			<position>
-				<x>15</x>
-				<y>-5.7</y>
-				<z>-1.1</z>
-			</position>
-			<reference-dist>8.0</reference-dist>
-			<max-dist>50.0</max-dist>
-		</engine>
-
-		<engine>
-			<name>inside right buzz</name>
-			<path>Aircraft/CSeries/Sounds/res/a320_eng_buzz.wav</path>
-			<mode>looped</mode>
-			<condition>
-				<greater-than>
-					<property>engines/engine[1]/rpm</property>
-					<value>2</value>
-				</greater-than>
-				<property>sim/current-view/internal</property>
-
-			</condition>
-			<pitch>
-				<property>/engines/engine[1]/rpm</property>
-				<offset>0.0</offset>
-				<factor>0.01</factor>
-				<min>0</min>
-				<max>1.0</max>
-			</pitch>
-			<!--volume>
-				<internal>dt_play</internal>
-				<factor>0.25</factor>
-				<min>0</min>
-				<max>1.6</max>
-			</volume-->
-			<volume>
-				<property>/engines/engine[1]/rpm</property>
-				<offset>0.0</offset>
-				<factor>0.006</factor>
-				<min>0</min>
-				<max>0.6</max>
-			</volume>
-
-			<position>
-				<x>15</x>
-				<y>5.7</y>
-				<z>-1.1</z>
-			</position>
-			<reference-dist>8.0</reference-dist>
-			<max-dist>50.0</max-dist>
-		</engine>
-		
-		<engine>
-			<name>N2 inside turb left n1_2</name>
-			<path>Aircraft/CSeries/Sounds/res/airbus_turbine_long.wav</path>
-			<mode>looped</mode>
-			<condition>
-				<greater-than>
-					<property>engines/engine[0]/rpm</property>
-					<value>4</value>
-				</greater-than>
-				<property>sim/current-view/internal</property>
-			</condition>
-			<pitch>
-				<property>/engines/engine[0]/rpm</property>
-				<offset>0</offset>
-				<!--factor>0.033</factor-->
-				<factor>0.0166</factor><!-- FOR N2 -->
-				<!--factor>0.02</factor-->
-				<min>0.0</min>
-				<max>4</max>
-			</pitch>
-			<volume>0.7</volume>
-
-			<position>
-				<x>15</x>
-				<y>-5.7</y>
-				<z>-1.1</z>
-			</position>
-			<reference-dist>25.0</reference-dist>
-			<max-dist>50.0</max-dist>
-		</engine>
-
-		<engine>
-			<name>N2 inside turb right n1_2</name>
-			<path>Aircraft/CSeries/Sounds/res/airbus_turbine_long.wav</path>
-			<mode>looped</mode>
-			<condition>
-				<greater-than>
-					<property>engines/engine[1]/rpm</property>
-					<value>4</value>
-				</greater-than>
-				<property>sim/current-view/internal</property>
-			</condition>
-			<pitch>
-				<property>/engines/engine[1]/rpm</property>
-				<offset>0</offset>
-				<!--factor>0.033</factor-->
-				<factor>0.0166</factor><!-- FOR N2 -->
-				<!--factor>0.02</factor-->
-				<min>0.0</min>
-				<max>4</max>
-			</pitch>
-			<volume>0.7</volume>
-
-			<position>
-				<x>15</x>
-				<y>5.7</y>
-				<z>-1.1</z>
-			</position>
-			<reference-dist>25.0</reference-dist>
-			<max-dist>50.0</max-dist>
-		</engine>
-
-
-<!-- #########################   ENGINE: Rever Thrust  ################################ -->
-
-		<engine>
-			<name>inside left engine Revers</name>
-			<path>Aircraft/CSeries/Sounds/res/reverser2.wav</path>
-			<mode>looped</mode>
-			<condition>
-				<property>engines/engine[0]/reverser</property>
-				<property>sim/current-view/internal</property>
-			</condition>
-			<volume>
-				<property>engines/engine[0]/thrust_lb</property>
-				<factor>0.000051428</factor>
-				<type>abs</type>
-				<min>0.0</min>
-				<max>1.5</max>
-			</volume>
-	
-			<position>
-				<x>15</x>
-				<y>-5.7</y>
-				<z>-1.1</z>
-			</position>
-			<reference-dist>25.0</reference-dist>
-			<max-dist>100.0</max-dist>
-		</engine>
-
-		<engine>
-			<name>inside right engine Revers</name>
-			<path>Aircraft/CSeries/Sounds/res/reverser2.wav</path>
-			<mode>looped</mode>
-			<condition>
-				<property>engines/engine[1]/reverser</property>
-
-				<property>sim/current-view/internal</property>
-
-			</condition>
-			<volume>
-				<property>engines/engine[1]/thrust_lb</property>
-				<factor>0.000051428</factor>
-				<type>abs</type>
-				<min>0.0</min>
-				<max>1.5</max>
-			</volume>
-
-			<position>
-				<x>15</x>
-				<y>5.7</y>
-				<z>-1.1</z>
-			</position>
-			<reference-dist>1.0</reference-dist>
-			<max-dist>50.0</max-dist>
-		</engine>	
-
-
-
-
-
- <!-- =============================================================== -->
- <!-- FX:                                                             -->
- <!-- =============================================================== -->
-
-		<passngrs>
-			<name>passenger cabin</name>
-			<mode>looped</mode>
-			<path>Aircraft/CSeries/Sounds/res/PassgCab5.wav</path>
+		<flaps>
+			<name>Flaps in transit</name>
+			<path>Sounds/flaps.wav</path>
+			<mode>once</mode>
 			<condition>
 				<and>
-					<property>sim/current-view/internal</property>
-					<property>sim/sound/passengers</property>
-					<less-than>
-						<property>sim/current-view/view-number</property>
-						<value>10</value>
-					</less-than>
-					<greater-than-equals>
-						<property>sim/current-view/view-number</property>
-						<value>8</value>
-					</greater-than-equals>
+					<property>controls/flight/flaps-start-snd</property>
+					<not><property>controls/flight/flaps-stop-snd</property></not>
 				</and>
 			</condition>
+			<position>
+				<x>3.8</x>
+				<y>0.01</y>
+				<z>-2.30</z>
+			</position>
+			<max-dist>20</max-dist>
+			<reference-dist>1</reference-dist>
+		</flaps>
+		<flapsStop>
+			<name>Flaps stopping</name>
+			<path>Sounds/flaps-stop1.wav</path>
+			<mode>once</mode>
+			<property>controls/flight/flaps-stop-snd</property>
+			<position>
+				<x>3.8</x>
+				<y>0.01</y>
+				<z>-2.30</z>
+			</position>
+			<max-dist>20</max-dist>
+			<reference-dist>1</reference-dist>
+		</flapsStop>
+		<slats>
+			<name>Slats in transit</name>
+			<path>Sounds/slats.wav</path>
+			<mode>in-transit</mode>		
+			<property>surface-positions/slat-pos-norm</property>
+			<position>
+				<x>-2.60</x>
+				<y>0.01</y>
+				<z>-2.30</z>
+			</position>
+			<max-dist>20</max-dist>
+			<reference-dist>1</reference-dist>
+		</slats>
+		<!-- Speedbrakes/spoilers hydraulics -->
+<!-- 		<speedbrake>
+			<name>Left speedbrake in transit</name>
+			<path>Sounds/spoilers.wav</path>
+			<mode>in-transit</mode>
+			<property>surface-positions/left-speedbrake-pos-norm</property>
 			<volume>
-				<property>sim/sound/effects/volume</property>
-				<factor>0.2</factor>
-				<min>0</min>
-				<max>0.1</max>
+				<offset>-0.7</offset>
 			</volume>
 			<position>
-				<x>15</x>
-				<y>0</y>
-				<z>4</z>
+				<x>1</x>
+				<y>-3</y>
+				<z>0</z>
 			</position>
-			<reference-dist>5</reference-dist>
-			<max-dist>25</max-dist>
-		</passngrs>
-		
-		<inside>
-			<name>inside</name>
-			<mode>looped</mode>
-			<path>Aircraft/CSeries/Sounds/res/inside.wav</path>
+		</speedbrake>
+		<speedbrake>
+			<name>Right speedbrake in transit</name>
+			<path>Sounds/spoilers.wav</path>
+			<mode>in-transit</mode>
+			<property>surface-positions/right-speedbrake-pos-norm</property>
+			<volume>
+				<offset>-0.7</offset>
+			</volume>
+			<position>
+				<x>1</x>
+				<y>3</y>
+				<z>0</z>
+			</position>
+		</speedbrake> -->
+		<!-- Switch effects -->
+		<click>
+			<name>Switch click</name>
+			<mode>once</mode>
+			<path>Sounds/click.wav</path>
+			<condition>
+				<property>sim/sound/click</property>
+				<property>sim/current-view/internal</property>
+			</condition>
+		</click>
+		<click2>
+			<name>Switch click2</name>
+			<mode>once</mode>
+			<path>Sounds/click2.wav</path>
+			<condition>
+				<property>sim/sound/click2</property>
+				<property>sim/current-view/internal</property>
+			</condition>
+		</click2>
+		<swlclick>
+			<name>Switch light click</name>
+			<mode>once</mode>
+			<path>Sounds/switchlight-click.wav</path>
+			<condition>
+				<property>sim/sound/swl-click</property>
+				<property>sim/current-view/internal</property>
+			</condition>
+		</swlclick>
+		<sign>
+			<name>Passenger sign</name>
+			<mode>once</mode>
+			<path>Sounds/cabinalert.wav</path>
 			<condition>
 				<and>
+					<property>sim/sound/passenger-sign</property>
 					<property>sim/current-view/internal</property>
-					<or>
-						<and>
-							<property>engines/apu/running</property>
-							<property>controls/pneumatic/APU-bleed</property>
-						</and>
-						<and>
-							<property>engines/engine/running</property>
-							<property>controls/pneumatic/engine/bleed</property>
-						</and>
-						<and>
-							<property>engines/engine[1]/running</property>
-							<property>controls/pneumatic/engine[1]/bleed</property>
-						</and>
-					</or>
 				</and>
 			</condition>
-			<volume>
-				<!--property>sim/sound/effects/volume</property-->
-				<factor>0.25</factor>
-				<internal>dt_play</internal>
-				<min>0</min>
-				<max>0.15</max>
-			</volume>
-			<position>
-				<x>0</x>
-				<y>0</y>
-				<z>4</z>
-			</position>
-			<reference-dist>10</reference-dist>
-			<max-dist>25</max-dist>
-		</inside>
-        
-		<wind>
-			<name>wind</name>
+		</sign>
+		<!-- Alarms -->
+		<alarm>
+			<name>Master warning</name>
 			<mode>looped</mode>
-			<path>Aircraft/CSeries/Sounds/res/wind.wav</path>
-			<property>/velocities/airspeed-kt</property>
-			<volume>
-				<property>/position/altitude-ft</property>
-				<factor>-0.000015</factor>
-				<offset>1.0</offset>
-				<min>0.1</min>
-				<max>1.0</max>
-			</volume>
-			<volume>
-				<property>/velocities/airspeed-kt</property>
-				<factor>0.0020</factor>
-				<min>0.03</min>
-				<max>2.25</max>
-			</volume>
-			<pitch>
-				<property>/velocities/airspeed-kt</property>
-				<factor>0.01</factor>
-				<offset>1.25</offset>
-			</pitch>
-			<!--position>
- <x>-24</x>
- <y>0</y>
- <z>0.86</z>
-   </position-->
-			<reference-dist>1.0</reference-dist>
-			<max-dist>2.0</max-dist>
-		</wind>
-
-		<roll>
-			<name>Roll</name>
-			<path>Aircraft/CSeries/Sounds/res/roll.wav</path>
-			<mode>looped</mode>
+			<path>Sounds/warning.wav</path>
 			<condition>
-				<property>sim/current-view/internal</property>
-				<or>
-					<!-- While on ground -->
-					<property>/gear/gear[0]/wow</property>
-					<property>/gear/gear[1]/wow</property>
-					<property>/gear/gear[2]/wow</property>
-					<property>/gear/gear[3]/wow</property>
-
-				</or>
+				<property>sim/alarms/master-warning</property>
 			</condition>
-			<!--volume>
- <property>/sim/sound/effects/volume</property>
- <factor>1.5</factor>
-   </volume-->
-			<volume>
-				<property>/velocities/groundspeed-kt</property>
-				<type>log</type>
-				<factor>0.36</factor>
-				<max>0.9</max>
-
-			</volume>
-			<pitch>
-				<property>/velocities/groundspeed-kt</property>
-				<!--offset>0</offset-->
-				<type>log</type>
-				<factor>0.28</factor>
-				<min>0.1</min>
-				<max>1.5</max>
-			</pitch>
+		</alarm>
+		<alarm>
+			<name>Overspeed alarm</name>
+			<mode>looped</mode>
+			<path>Sounds/overspeed.wav</path>
+			<condition>
+				<property>sim/alarms/overspeed-alarm</property>
+			</condition>
+		</alarm>
+		<alarm>
+			<name>Autopilot disconnect</name>
+			<mode>once</mode>
 			<type>avionics</type>
-			<!--position>
- <x>22.5</x>
- <y>0</y>
- <z>0.78</z>
-   </position-->
-		</roll>
-		<Wheels>
-			<name>nose Wheel Touchdown</name>
-			<path>Aircraft/CSeries/Sounds/res/touchdown.wav</path>
+			<path>Sounds/autopilot-disconnect.wav</path>
 			<condition>
-				<property>/gear/gear[0]/wow</property>
+				<equals>
+					<property>controls/autoflight/autopilot/engage</property>     
+					<value>0</value>
+				</equals>
 			</condition>
 			<volume>
-				<property>sim/sound/effects/volume</property>
+				<property>sim/model/sound-enabled</property>
 			</volume>
-			<volume>
-				<property>/velocities/speed-down-fps</property>
-				<factor>0.10</factor>
-			</volume>
-			<volume>
-				<property>/velocities/groundspeed-kt</property>
-				<factor>0.01</factor>
-			</volume>
-			<volume>
-				<internal>dt_stop</internal>
-				<factor>0.05</factor>
-				<max>1.0</max>
-			</volume>
-			<pitch>
-				<property>/velocities/groundspeed-kt</property>
-				<factor>0.0025</factor>
-				<offset>1.2</offset>
-			</pitch>
-			<position>
-				<x>5</x>
-				<y>0</y>
-				<z>-3.5</z>
-			</position>
-			<reference-dist>20.0</reference-dist>
-			<max-dist>500.0</max-dist>
-		</Wheels>
-		<Wheels>
-			<name>left main Wheel Touchdown</name>
-			<path>Aircraft/CSeries/Sounds/res/touchdown.wav</path>
+		</alarm>
+		<altitude-alert>
+			<name>Altitude alert</name>
+			<mode>once</mode>
+			<path>Sounds/c-chord.wav</path>
 			<condition>
-				<property>/gear/gear[1]/wow</property>
+				<property>sim/alarms/altitude-alert</property>
 			</condition>
 			<volume>
-				<property>sim/sound/effects/volume</property>
+				<property>sim/model/sound-enabled</property>
 			</volume>
-			<volume>
-				<property>/velocities/speed-down-fps</property>
-				<factor>0.10</factor>
-			</volume>
-			<volume>
-				<property>/velocities/groundspeed-kt</property>
-				<factor>0.01</factor>
-			</volume>
-			<volume>
-				<internal>dt_stop</internal>
-				<factor>0.0025</factor>
-				<max>1.0</max>
-			</volume>
-			<pitch>
-				<property>/velocities/groundspeed-kt</property>
-				<factor>0.0025</factor>
-				<offset>1.2</offset>
-			</pitch>
-			<position>
-				<x>17.66</x>
-				<y>-3.8</y>
-				<z>-3.5</z>
-			</position>
-			<reference-dist>20.0</reference-dist>
-			<max-dist>500.0</max-dist>
-		</Wheels>
-		<Wheels>
-			<name>right main Wheel Touchdown</name>
-			<path>Aircraft/CSeries/Sounds/res/touchdown.wav</path>
-			<condition>
-				<property>/gear/gear[2]/wow</property>
-			</condition>
-			<volume>
-				<property>sim/sound/effects/volume</property>
-			</volume>
-			<volume>
-				<property>/velocities/speed-down-fps</property>
-				<factor>0.10</factor>
-			</volume>
-			<volume>
-				<property>/velocities/groundspeed-kt</property>
-				<factor>0.01</factor>
-			</volume>
-			<volume>
-				<internal>dt_stop</internal>
-				<factor>0.05</factor>
-				<max>1.0</max>
-			</volume>
-			<pitch>
-				<property>/velocities/groundspeed-kt</property>
-				<factor>0.0025</factor>
-				<offset>1.2</offset>
-			</pitch>
-			<position>
-				<x>17.66</x>
-				<y>3.8</y>
-				<z>-3.5</z>
-			</position>
-			<reference-dist>20.0</reference-dist>
-			<max-dist>500.0</max-dist>
-		</Wheels>
-		
-		<rumblemain>
-			<name>main gear rumble</name>
-			<mode>looped</mode>
-			<path>Sounds/rumble.wav</path>
+		</altitude-alert>
+		<!-- Speed callouts -->
+		<callout>
+			<name>80 knots</name>
+			<mode>once</mode>
+			<type>avionics</type>
+			<path>Sounds/80kt.wav</path>
 			<condition>
 				<and>
 					<or>
@@ -795,1017 +175,927 @@
 						<property>gear/gear[1]/wow</property>
 						<property>gear/gear[2]/wow</property>
 					</or>
+					<less-than>
+						<property alias="/params/airspeed-kt" />
+						<property>autopilot/internal/lookahead-5-sec-airspeed-kt</property>
+					</less-than>
+					<greater-than>
+						<property alias="/params/airspeed-kt" />
+						<value>80</value>
+					</greater-than>
+					<less-than>
+						<property alias="/params/airspeed-kt" />
+						<value>88</value>
+					</less-than>
+				</and>
+			</condition>
+		</callout>
+		<callout>
+			<name>V1</name>
+			<mode>once</mode>
+			<type>avionics</type>
+			<path>Sounds/v1.wav</path>
+			<condition>
+				<and>
+					<or>
+						<property>gear/gear[0]/wow</property>
+						<property>gear/gear[1]/wow</property>
+						<property>gear/gear[2]/wow</property>
+					</or>
+					<less-than>
+						<property alias="/params/airspeed-kt" />
+						<property>autopilot/internal/lookahead-5-sec-airspeed-kt</property>
+					</less-than>
+					<greater-than-equals>
+						<property alias="/params/airspeed-kt" />
+						<property>instrumentation/adc/reference/v1</property>
+					</greater-than-equals>
+					<less-than>
+						<property alias="/params/airspeed-kt" />
+						<property>instrumentation/adc/reference/vr</property>
+					</less-than>
+				</and>
+			</condition>
+		</callout>
+		<callout>
+			<name>Vr</name>
+			<mode>once</mode>
+			<type>avionics</type>
+			<path>Sounds/vr.wav</path>
+			<condition>
+				<and>
+					<or>
+						<property>gear/gear[0]/wow</property>
+						<property>gear/gear[1]/wow</property>
+						<property>gear/gear[2]/wow</property>
+					</or>
+					<less-than>
+						<property alias="/params/airspeed-kt" />
+						<property>autopilot/internal/lookahead-5-sec-airspeed-kt</property>
+					</less-than>
+					<greater-than-equals>
+						<property alias="/params/airspeed-kt" />
+						<property>instrumentation/adc/reference/vr</property>
+					</greater-than-equals>
+					<less-than>
+						<property alias="/params/airspeed-kt" />
+						<property>instrumentation/adc/reference/v2</property>
+					</less-than>
+				</and>
+			</condition>
+		</callout>
+		<callout>
+			<name>V2</name>
+			<mode>once</mode>
+			<type>avionics</type>
+			<path>Sounds/v2.wav</path>
+			<condition>
+				<and>
+					<less-than>
+						<property alias="/params/airspeed-kt" />
+						<property>autopilot/internal/lookahead-5-sec-airspeed-kt</property>
+					</less-than>
+					<greater-than-equals>
+						<property alias="/params/airspeed-kt" />
+						<property>instrumentation/adc/reference/v2</property>
+					</greater-than-equals>
+					<less-than>
+						<property>instrumentation/radar-altimeter[0]/radar-altitude-ft</property>
+						<value>500</value>
+					</less-than>
+				</and>
+			</condition>
+		</callout>
+		<callout>
+			<name>Positive climb rate</name>
+			<mode>once</mode>
+			<type>avionics</type>
+			<path>Sounds/proc.wav</path>
+			<condition>
+				<and>
+					<less-than>
+						<property alias="/params/airspeed-kt" />
+						<property>autopilot/internal/lookahead-5-sec-airspeed-kt</property>
+					</less-than>
+					<greater-than-equals>
+						<property alias="/params/airspeed-kt" />
+						<property>instrumentation/adc/reference/v2</property>
+					</greater-than-equals>
+					<greater-than-equals>
+						<property>instrumentation/vertical-speed-indicator[0]/indicated-speed-fpm</property>
+						<value>500</value>
+					</greater-than-equals>
+					<less-than>
+						<property>instrumentation/radar-altimeter[0]/radar-altitude-ft</property>
+						<value>300</value>
+					</less-than>
+					<greater-than>
+						<property>instrumentation/attitude-indicator[0]/indicated-pitch-deg</property>
+						<value>7</value>
+					</greater-than>
+					<less-than>
+						<property>instrumentation/attitude-indicator[0]/indicated-pitch-deg</property>
+						<value>17</value>
+					</less-than>
+				</and>
+			</condition>
+		</callout>
+		
+		<!-- generic wind -->
+		<wind>
+			<name>Cockpit aircon</name>
+			<path>Sounds/cockpit-aircon.wav</path>
+			<mode>looped</mode>
+		    <condition>
+				<property>sim/current-view/internal</property>
+				<or>
+					<property>systems/pneumatic/pressure-left</property>
+					<property>systems/pneumatic/pressure-right</property>
+				</or>
+			</condition>
+		    <volume>
+				<factor>0.35</factor>
+			</volume>
+		</wind>  
+		<wind>
+			<name>Wind</name>
+			<path>Sounds/wind.wav</path>
+			<mode>looped</mode>
+		    <condition>
+				<greater-than>
+					<property alias="/params/airspeed-kt" />
+					<value>20</value>
+				</greater-than>
+			</condition>
+		    <pitch>
+				<property alias="/params/airspeed-kt" />
+				<type>sqrt</type>
+				<offset>0.7</offset>
+				<factor>0.015</factor>
+				<max>1.5</max>
+			</pitch>
+		    <volume>
+				<property alias="/params/airspeed-kt" />
+				<type>sqrt</type>
+				<offset>-0.2</offset>
+				<factor>0.05</factor>
+			</volume>
+			<reference-dist>150</reference-dist>
+			<max-dist>400</max-dist>
+		</wind>  		
+
+		<turbL>
+			<name>Turbulence Speedbrake L lowspeed</name>
+			<path>Sounds/air-brakes.wav</path>
+			<mode>looped</mode>
+			<condition>
+				<and>
+					<greater-than>
+						<property>surface-positions/left-speedbrake-pos-norm</property>
+						<value>0</value>
+					</greater-than>
+					<less-than>
+						<property alias="/params/airspeed-kt" />
+						<value>150</value>
+					</less-than>
+				</and>
+			</condition>
+			<volume>
+				<property alias="/params/airspeed-kt" />
+				<type>sqrt</type>
+				<offset>-0.3</offset>
+				<factor>0.055</factor>
+			</volume>
+			<position>
+				<x>2.37</x>
+				<y>6</y>
+				<z>-1.95</z>
+			</position>	   
+		</turbL>    
+		<turbL>
+			<name>Turbulence Speedbrake L highspeed</name>
+			<path>Sounds/air-brakes.wav</path>
+			<mode>looped</mode>
+			<condition>
+				<and>
+					<greater-than>
+						<property>surface-positions/left-speedbrake-pos-norm</property>
+						<value>0</value>
+					</greater-than>
+					<greater-than>
+						<property alias="/params/airspeed-kt" />
+						<value>150</value>
+					</greater-than>
+				</and>
+			</condition>
+			<volume>
+				<property>surface-positions/left-speedbrake-pos-norm</property>
+				<offset>0.37</offset>
+				<factor>0.6</factor>
+			</volume>
+			<position>
+				<x>2.37</x>
+				<y>6</y>
+				<z>-1.95</z>
+			</position>	   
+		</turbL>    
+
+		<turbR>
+			<name>Turbulence Speedbrake R lowspeed</name>
+			<path>Sounds/air-brakes.wav</path>
+			<mode>looped</mode>
+			<condition>
+				<and>
+					<greater-than>
+						<property>surface-positions/right-speedbrake-pos-norm</property>
+						<value>0</value>
+					</greater-than>
+					<less-than>
+						<property alias="/params/airspeed-kt" />
+						<value>150</value>
+					</less-than>
+				</and>
+			</condition>
+			<volume>
+				<property alias="/params/airspeed-kt" />
+				<type>sqrt</type>
+				<offset>-0.3</offset>
+				<factor>0.055</factor>
+			</volume>
+			<volume>
+				<property>surface-positions/right-speedbrake-pos-norm</property>
+			</volume>
+			<position>
+				<x>2.37</x>
+				<y>-6</y>
+				<z>-1.95</z>
+			</position>	   
+		</turbR> 
+		<turbR>
+			<name>Turbulence Speedbrake R highspeed</name>
+			<path>Sounds/air-brakes.wav</path>
+			<mode>looped</mode>
+			<condition>
+				<and>
+					<greater-than>
+						<property>surface-positions/right-speedbrake-pos-norm</property>
+						<value>0</value>
+					</greater-than>
+					<greater-than>
+						<property alias="/params/airspeed-kt" />
+						<value>150</value>
+					</greater-than>
+				</and>
+			</condition>
+			<volume>
+				<property>surface-positions/right-speedbrake-pos-norm</property>
+				<offset>0.37</offset>
+				<factor>0.6</factor>
+			</volume>
+			<position>
+				<x>2.37</x>
+				<y>-6</y>
+				<z>-1.95</z>
+			</position>	   
+		</turbR> 
+		<!-- main gear -->
+		<gear>
+			<name>Left main gear touchdown</name>
+			<path>Sounds/squeaking-main.wav</path>
+			<mode>once</mode>
+			<condition>
+				<property>gear/gear[1]/wow</property>
+			</condition>
+			<volume>
+				<property>sim/model/sound-enabled</property>
+			</volume>
+			<volume>
+				<offset>-0.95</offset>
+			</volume>
+			<position>
+				<x>1.25</x>
+				<y>-2</y>
+				<z>-3.357</z>
+			</position>
+			<reference-dist>50</reference-dist>
+			<max-dist>100</max-dist>
+		</gear>
+		<gear>
+			<name>Left main gear touchdown 2</name>
+			<path>Sounds/touchdown-vibrations.wav</path>
+			<mode>once</mode>
+			<condition>
+				<property>gear/gear[1]/wow</property>
+			</condition>
+			<volume>
+				<property>sim/model/sound-enabled</property>
+			</volume>
+			<volume>
+				<offset>-0.5</offset>
+			</volume>
+			<position>
+				<x>1.25</x>
+				<y>-2</y>
+				<z>-3.357</z>
+			</position>
+			<reference-dist>50</reference-dist>
+			<max-dist>100</max-dist>
+		</gear>
+		<gear>
+			<name>Right main gear touchdown</name>
+			<path>Sounds/squeaking-main.wav</path>
+			<mode>once</mode>
+			<condition>
+				<property>gear/gear[2]/wow</property>
+			</condition>
+			<volume>
+				<property>sim/model/sound-enabled</property>
+			</volume>
+			<volume>
+				<offset>-0.95</offset>
+			</volume>
+			<position>
+				<x>1.25</x>
+				<y>2</y>
+				<z>-3.357</z>
+			</position>
+			<reference-dist>50</reference-dist>
+			<max-dist>100</max-dist>
+		</gear>
+		<gear>
+			<name>Right main gear touchdown 2</name>
+			<path>Sounds/touchdown-vibrations.wav</path>
+			<mode>once</mode>
+			<condition>
+				<property>gear/gear[2]/wow</property>
+			</condition>
+			<volume>
+				<property>sim/model/sound-enabled</property>
+			</volume>
+			<volume>
+				<offset>-0.5</offset>
+			</volume>
+			<position>
+				<x>1.25</x>
+				<y>2</y>
+				<z>-3.357</z>
+			</position>
+			<reference-dist>50</reference-dist>
+			<max-dist>100</max-dist>
+		</gear>
+		<rumble><!-- main internal -->
+			<name>Main gear rumble</name>
+			<mode>looped</mode>
+			<path>Sounds/roll.wav</path>
+			<condition>
+				<and>
+					<or>
+						<property>gear/gear[1]/wow</property>
+						<property>gear/gear[2]/wow</property>
+					</or>
+					<property>sim/current-view/internal</property>
+				</and>
+			</condition>
+			<volume>
+				<property alias="/params/groundspeed-kt" />
+				<type>log</type>
+				<factor>0.5</factor>
+			</volume>
+			<position>
+				<x>1.25</x>
+				<y>0.01</y>
+				<z>-3.357</z>
+			</position>
+			<reference-dist>6</reference-dist>
+			<max-dist>25</max-dist>
+		</rumble>		
+		
+		
+		<gear><!-- gear up/dn; should be replaced with better sounds -->
+			<name>Gear in transit</name>
+			<path>Sounds/gear.wav</path>
+			<mode>in-transit</mode>
+			<property>gear/gear[0]/position-norm</property>
+			<volume>
+				<factor>0.5</factor>
+			</volume>
+			<position>
+				<x>-14</x>
+				<y>0.01</y>
+				<z>-2</z>
+			</position>
+			<position>
+				<x>1.30</x>
+				<y>0.01</y>
+				<z>-2.50</z>
+			</position>
+			<reference-dist>2</reference-dist>
+			<max-dist>15</max-dist>
+		</gear>
+		<gear>
+			<name>Gear door close</name>
+			<path>Sounds/door_close.wav</path>
+			<mode>once</mode>
+			<condition>
+				<and>
+					<greater-than>
+						<property>sim/time/elapsed-sec</property>
+						<value>10</value>
+					</greater-than>
+					<or>
+						<equals>
+							<property>gear/gear[0]/position-norm</property>
+							<value>0</value>
+						</equals>
+						<equals>
+							<property>gear/gear[0]/position-norm</property>
+							<value>1</value>
+						</equals>
+					</or>
+				</and>
+			</condition>
+			<volume>
+				<!-- <offset>-0.75</offset> -->
+				<factor>0.2</factor>
+			</volume>
+			<position>
+				<x>1.30</x>
+				<y>0.01</y>
+				<z>-2.50</z>
+			</position>
+			<reference-dist>2</reference-dist>
+			<max-dist>15</max-dist>
+		</gear>
+		<!-- APU, same for inside and outside -->
+		<apu>
+			<name>APU starting</name>
+			<mode>once</mode>
+			<path>Aircraft/CRJ700-family/Sounds/apu_start.wav</path>
+			<condition>
+				<and>
+					<property>controls/APU/off-on</property>
+					<greater-than>
+						<property>engines/engine[2]/rpm</property>
+						<value>0</value>
+					</greater-than>
+					<less-than>
+						<property>engines/engine[2]/rpm</property>
+						<value>99</value>
+					</less-than>
+				</and>
+			</condition>
+			<reference-dist>10</reference-dist>
+			<max-dist>50</max-dist>
+			<position>
+				<x>13.30</x>
+				<y>0.01</y>
+				<z>-0.70</z>
+			</position>
+		</apu>
+		<apu>
+			<name>APU running</name>
+			<mode>looped</mode>
+			<path>Aircraft/CRJ700-family/Sounds/apu_run.wav</path>
+			<condition>
+				<greater-than-equals>
+					<property>engines/engine[2]/rpm</property>
+					<value>99</value>
+				</greater-than-equals>
+			</condition>
+			<reference-dist>10</reference-dist>
+			<max-dist>50</max-dist>
+			<position>
+				<x>13.30</x>
+				<y>0.01</y>
+				<z>-0.70</z>
+			</position>
+		</apu>
+		<apu>
+			<name>APU shutdown</name>
+			<mode>once</mode>
+			<path>Aircraft/CRJ700-family/Sounds/apu_shutdown.wav</path>
+			<condition>
+				<and>
+					<not>
+						<property>controls/APU/off-on</property>
+					</not>
+					<greater-than>
+						<property>engines/engine[2]/rpm</property>
+						<value>0</value>
+					</greater-than>
+					<less-than>
+						<property>engines/engine[2]/rpm</property>
+						<value>99</value>
+					</less-than>
+				</and>
+			</condition>
+			<reference-dist>10</reference-dist>
+			<max-dist>50</max-dist>
+			<position>
+				<x>13.30</x>
+				<y>0.01</y>
+				<z>-0.70</z>
+			</position>
+		</apu>
+		<!-- Engine 1 external sound -->
+		<engine>
+			<name>Engine 1 sound 1 external</name>
+			<path>Aircraft/CRJ700-family/Sounds/whine.wav</path>
+			<mode>looped</mode>
+			<condition>
+				<and>
+					<not>
+						<property>sim/current-view/internal</property>
+					</not>
+					<greater-than>
+						<property>engines/engine[0]/rpm</property>
+						<value>0</value>
+					</greater-than>
+				</and>
+			</condition>
+			<volume>
+				<property>engines/engine[0]/rpm</property>
+				<offset>0</offset>
+				<factor>0.005</factor>
+			</volume>
+			<pitch>
+				<property>engines/engine[0]/rpm</property>
+				<offset>0.5</offset>
+				<factor>0.007</factor>
+			</pitch>
+			<position>
+				<x>9.30</x>
+				<y>2.27</y>
+				<z>-0.31</z>
+			</position>
+			<!-- stuttering issues -->
+			<!--orientation>
+				<x>-1</x>
+				<y>0.01</y>
+				<z>0</z>
+				<inner-angle>75</inner-angle>
+				<outer-angle>210</outer-angle>
+				<outer-gain>0.1</outer-gain>
+			</orientation-->
+		</engine>
+		<engine>
+			<name>Engine 1 sound 2 external</name>
+			<path>Sounds/jet.wav</path>
+			<mode>looped</mode>
+			<condition>
+				<and>
+					<not>
+						<property>sim/current-view/internal</property>
+					</not>
+					<greater-than>
+						<property>engines/engine[0]/rpm</property>
+						<value>0</value>
+					</greater-than>
+				</and>
+			</condition>
+			<volume>
+				<property>engines/engine[0]/rpm</property>
+				<offset>0.5</offset>
+				<factor>0.015</factor>
+			</volume>
+			<pitch>
+				<property>engines/engine[0]/rpm</property>
+				<offset>0</offset>
+				<factor>0.01</factor>
+			</pitch>
+			<position>
+				<x>9.30</x>
+				<y>2.27</y>
+				<z>-0.31</z>
+			</position>
+			<!-- stuttering issues -->
+			<!--orientation>
+				<x>1</x>
+				<y>0.01</y>
+				<z>0</z>
+				<inner-angle>75</inner-angle>
+				<outer-angle>210</outer-angle>
+				<outer-gain>0.1</outer-gain>
+			</orientation-->
+		</engine>
+		<engine>
+			<name>Engine 1 reverse thrust</name>
+			<path>Aircraft/CRJ700-family/Sounds/reverse-thrust.wav</path>
+			<mode>looped</mode>
+			<condition>
+				<and>
+					<greater-than>
+						<property>engines/engine[0]/rpm</property>
+						<value>0</value>
+					</greater-than>
+					<greater-than>
+						<property>engines/engine[0]/reverser-pos-norm</property>
+						<value>0</value>
+					</greater-than>
+				</and>
+			</condition>
+			<volume>
+				<property>engines/engine[0]/rpm</property>
+				<offset>0</offset>
+				<factor>0.01</factor>
+			</volume>
+			<position>
+				<x>7.30</x>
+				<y>2.27</y>
+				<z>-0.31</z>
+			</position>
+		</engine>
+		
+		<!-- Engine 2 external sound -->
+		<engine>
+			<name>Engine 2 sound 1 external</name>
+			<path>Aircraft/CRJ700-family/Sounds/whine.wav</path>
+			<mode>looped</mode>
+			<condition>
+				<and>
+					<not>
+						<property>sim/current-view/internal</property>
+					</not>
+					<greater-than>
+						<property>engines/engine[1]/rpm</property>
+						<value>0</value>
+					</greater-than>
+				</and>
+			</condition>
+			<volume>
+				<property>engines/engine[1]/rpm</property>
+				<offset>0</offset>
+				<factor>0.005</factor>
+			</volume>
+			<pitch>
+				<property>engines/engine[1]/rpm</property>
+				<offset>0.5</offset>
+				<factor>0.007</factor>
+			</pitch>
+			<position>
+				<x>9.30</x>
+				<y>-2.27</y>
+				<z>-0.31</z>
+			</position>
+			<!-- stuttering issues -->
+			<!--orientation>
+				<x>-1</x>
+				<y>0.01</y>
+				<z>0</z>
+				<inner-angle>75</inner-angle>
+				<outer-angle>210</outer-angle>
+				<outer-gain>0.1</outer-gain>
+			</orientation-->
+		</engine>
+		<engine>
+			<name>Engine 2 sound 2 external</name>
+			<path>Sounds/jet.wav</path>
+			<mode>looped</mode>
+			<condition>
+				<and>
+					<not>
+						<property>sim/current-view/internal</property>
+					</not>
+					<greater-than>
+						<property>engines/engine[1]/rpm</property>
+						<value>0</value>
+					</greater-than>
+				</and>
+			</condition>
+			<volume>
+				<property>engines/engine[1]/rpm</property>
+				<offset>0.5</offset>
+				<factor>0.0152</factor>
+			</volume>
+			<pitch>
+				<property>engines/engine[1]/rpm</property>
+				<offset>0</offset>
+				<factor>0.01</factor>
+			</pitch>
+			<position>
+				<x>9.30</x>
+				<y>-2.27</y>
+				<z>-0.31</z>
+			</position>
+			<!-- stuttering issues -->
+			<!--orientation>
+				<x>1</x>
+				<y>0.01</y>
+				<z>0</z>
+				<inner-angle>75</inner-angle>
+				<outer-angle>210</outer-angle>
+				<outer-gain>0.1</outer-gain>
+			</orientation-->
+		</engine>
+		<engine>
+			<name>Engine 2 reverse thrust</name>
+			<path>Aircraft/CRJ700-family/Sounds/reverse-thrust.wav</path>
+			<mode>looped</mode>
+			<condition>
+				<and>
+					<greater-than>
+						<property>engines/engine[1]/rpm</property>
+						<value>0</value>
+					</greater-than>
+					<greater-than>
+						<property>engines/engine[1]/reverser-pos-norm</property>
+						<value>0</value>
+					</greater-than>
+				</and>
+			</condition>
+			<volume>
+				<property>engines/engine[1]/rpm</property>
+				<offset>0</offset>
+				<factor>0.01</factor>
+			</volume>
+			<position>
+				<x>7.30</x>
+				<y>-2.27</y>
+				<z>-0.31</z>
+			</position>
+		</engine>
+		<!-- Engine 1 internal sound -->
+		<engine>
+			<name>Engine 1 sound internal</name>
+			<path>Aircraft/CRJ700-family/Sounds/whine-inside.wav</path>
+			<mode>looped</mode>
+			<condition>
+				<and>
+					<property>sim/current-view/internal</property>
+					<greater-than>
+						<property>engines/engine[0]/rpm</property>
+						<value>0</value>
+					</greater-than>
+				</and>
+			</condition>
+			<volume>
+				<property>engines/engine[0]/rpm</property>
+				<offset>0.5</offset>
+				<factor>0.006</factor>
+			</volume>
+			<pitch>
+				<property>engines/engine[0]/rpm</property>
+				<offset>0</offset>
+				<factor>0.01</factor>
+			</pitch>
+			<position>
+				<x>7.30</x>
+				<y>2.27</y>
+				<z>-0.31</z>
+			</position>
+			<reference-dist>10</reference-dist>
+			<max-dist>50</max-dist>
+			<!-- stuttering issues -->
+			<!--orientation>
+				<x>-1</x>
+				<y>0.01</y>
+				<z>0</z>
+				<inner-angle>75</inner-angle>
+				<outer-angle>210</outer-angle>
+				<outer-gain>0.1</outer-gain>
+			</orientation-->
+		</engine>
+		<!-- Engine 2 internal sound -->
+		<engine>
+			<name>Engine 2 sound internal</name>
+			<path>Aircraft/CRJ700-family/Sounds/whine-inside.wav</path>
+			<mode>looped</mode>
+			<condition>
+				<and>
+					<property>sim/current-view/internal</property>
+					<greater-than>
+						<property>engines/engine[1]/rpm</property>
+						<value>0</value>
+					</greater-than>
+				</and>
+			</condition>
+			<volume>
+				<property>engines/engine[1]/rpm</property>
+				<offset>0</offset>
+				<factor>0.05</factor>
+				<max>2</max>
+			</volume>
+			<pitch>
+				<property>engines/engine[1]/rpm</property>
+				<offset>0</offset>
+				<factor>0.01</factor>
+			</pitch>
+			<position>
+				<x>7.30</x>
+				<y>-2.27</y>
+				<z>-0.31</z>
+			</position>
+			<reference-dist>10</reference-dist>
+			<max-dist>50</max-dist>
+			<!-- stuttering issues -->
+			<!--orientation>
+				<x>-1</x>
+				<y>0.01</y>
+				<z>0</z>
+				<inner-angle>75</inner-angle>
+				<outer-angle>210</outer-angle>
+				<outer-gain>0.1</outer-gain>
+			</orientation-->
+		</engine>
+
+		<!-- Gear touchdown -->
+		<gear>
+			<name>Nose gear touchdown</name>
+			<path>Aircraft/CRJ700-family/Sounds/squeaking-front.wav</path>
+			<mode>once</mode>
+			<condition>
+				<property>gear/gear[0]/wow</property>
+			</condition>
+			<volume>
+				<property>sim/model/sound-enabled</property>
+			</volume>
+			<volume>
+				<offset>-0.95</offset>
+			</volume>
+			<position>
+				<x>-14</x>
+				<y>0.01</y>
+				<z>-3.201</z>
+			</position>
+			<reference-dist>50</reference-dist>
+			<max-dist>100</max-dist>
+		</gear>
+		<gear>
+			<name>Nose gear touchdown 2</name>
+			<path>Aircraft/CRJ700-family/Sounds/pressure-mid.wav</path>
+			<mode>once</mode>
+			<condition>
+				<property>gear/gear[0]/wow</property>
+			</condition>
+			<volume>
+				<property>sim/model/sound-enabled</property>
+			</volume>
+			<volume>
+				<offset>-0.95</offset>
+			</volume>
+			<position>
+				<x>-14</x>
+				<y>0.01</y>
+				<z>-3.201</z>
+			</position>
+			<reference-dist>50</reference-dist>
+			<max-dist>100</max-dist>
+		</gear>
+		
+		<rumble><!-- nose internal -->
+			<name>Nose gear rumble</name>
+			<mode>looped</mode>
+			<path>Aircraft/CRJ700-family/Sounds/rumble.wav</path>
+			<condition>
+				<and>
+					<property>gear/gear[0]/wow</property>
 					<property>sim/current-view/internal</property>
 				</and>
 			</condition>
 			<volume>
 				<property>velocities/groundspeed-kt</property>
-				<!--type>log</type>
-   <factor>0.25</factor-->
-				<factor>0.08</factor>
-				<min>0</min>
-				<max>0.6</max>
+				<type>log</type>
+				<factor>0.3</factor>
 			</volume>
 			<position>
-				<x>-6.5</x>
-				<y>0</y>
-				<z>-5</z>
-			</position>
-			<reference-dist>20.0</reference-dist>
-			<max-dist>6000.0</max-dist>
-		</rumblemain>
-
-		<fuselage>
-			<name>fuselage</name>
-			<path>Aircraft/CSeries/Sounds/res/scrach.wav</path>
-			<mode>loop</mode>
-			<condition>
-				<or>
-					<property>/fdm/jsbsim/contact/unit[7]/WOW</property>
-					<property>/fdm/jsbsim/contact/unit[8]/WOW</property>
-				</or>
-				<greater-than>
-					<property>/velocities/groundspeed-kt</property>
-					<value>2</value>
-				</greater-than>
-			</condition>
-			<volume>
-				<property>sim/sound/effects/volume</property>
-			</volume>
-			<volume>
-				<property>/velocities/groundspeed-kt</property>
-				<factor>0.02</factor>
-			</volume>
-			<!--volume>
-				<internal>dt_stop</internal>
-				<factor>0.05</factor>
-				<max>1.0</max>
-			</volume-->
-			<pitch>
-				<property>/velocities/groundspeed-kt</property>
-				<factor>0.0025</factor>
-				<offset>1.2</offset>
-			</pitch>
-			<position>
-				<x>17.66</x>
-				<y>3.8</y>
-				<z>-3.5</z>
-			</position>
-			<reference-dist>20.0</reference-dist>
-			<max-dist>500.0</max-dist>
-		</fuselage>
-		
-
- <!-- =============================================================== -->
- <!-- Hidraulic:                                                      -->
- <!-- =============================================================== -->
-
-		<flap>
-			<name>flaps left</name>
-			<mode>in-transit</mode>
-			<!--path>Aircraft/CSeries/Sounds/res/flaps.wav</path-->
-			<path>Aircraft/CSeries/Sounds/res/A320_flaps.wav</path>
-			<property>/surface-positions/flap-pos-norm</property>
-			<!--volume>
- <property>sim/sound/effects/volume</property>
- <factor>3</factor>
- <max>3.8</max>
-   </volume-->
-			<volume>13</volume>
-			<position>
-				<x>15</x>
-				<y>-5.7</y>
-				<z>-0.5</z>
-			</position>
-			<reference-dist>15.0</reference-dist>
-			<max-dist>50.0</max-dist>
-		</flap>
-		<flap>
-			<name>flaps right</name>
-			<mode>in-transit</mode>
-			<!--path>Aircraft/CSeries/Sounds/res/flaps.wav</path-->
-			<path>Aircraft/CSeries/Sounds/res/A320_flaps.wav</path>
-			<property>/surface-positions/flap-pos-norm</property>
-			<!--volume>
- <property>sim/sound/effects/volume</property>
- <factor>3</factor>
- <max>3.8</max>
-   </volume-->
-			<volume>13</volume>
-			<position>
-				<x>15</x>
-				<y>5.7</y>
-				<z>-0.5</z>
-			</position>
-			<reference-dist>15.0</reference-dist>
-			<max-dist>50.0</max-dist>
-		</flap>
-		<!-- Multiple gear position to be added -->
-		<gear1>
-			<name>gear</name>
-			<mode>in-transit</mode>
-			<path>Aircraft/CSeries/Sounds/res/gear.wav</path>
-			<property>/gear/gear[0]/position-norm</property>
-			<volume>
-				<property>sim/sound/effects/volume</property>
-			</volume>
-			<pitch>
-				<internal>dt_play</internal>
-				<offset>0.7</offset>
-				<factor>-0.001</factor>
-			</pitch>
-			<position>
-				<x>0</x>
-				<y>0</y>
-				<z>-2</z>
-			</position>
-			<reference-dist>5.0</reference-dist>
-			<max-dist>50.0</max-dist>
-		</gear1>
-
-		<gear1>
-			<name>gear-lock</name>
-			<path>Sounds/gear-lck.wav</path>
-			<condition>
-				<equals>
-					<property>/gear/gear[0]/position-norm</property>
-					<value>0</value>
-				</equals>
-			</condition>
-			<volume>
-				<property>sim/sound/effects/volume</property>
-			</volume>
-			<position>
-				<x>0</x>
-				<y>0</y>
-				<z>-2</z>
-			</position>
-			<reference-dist>10.0</reference-dist>
-			<max-dist>50.0</max-dist>
-		</gear1>
-
-		<speedbrake>
-			<name>left speedbrake</name>
-			<mode>in-transit</mode>
-			<path>Aircraft/CSeries/Sounds/res/flaps.wav</path>
-			<property>/surface-positions/speedbrake-pos-norm</property>
-			<volume>
-				<property>sim/sound/effects/volume</property>
-				<factor>2.0</factor>
-			</volume>
-			<position>
-				<x>15</x>
-				<y>-5.7</y>
-				<z>-0.5</z>
-			</position>
-			<reference-dist>1</reference-dist>
-			<max-dist>50.0</max-dist>
-		</speedbrake>	
-		<speedbrake>
-			<name>right speedbrake</name>
-			<mode>in-transit</mode>
-			<path>Aircraft/CSeries/Sounds/res/flaps.wav</path>
-			<property>/surface-positions/speedbrake-pos-norm</property>
-			<volume>
-				<property>sim/sound/effects/volume</property>
-				<factor>2.0</factor>
-			</volume>
-			<position>
-				<x>15</x>
-				<y>5.7</y>
-				<z>-0.5</z>
-			</position>
-			<reference-dist>1</reference-dist>
-			<max-dist>50.0</max-dist>
-		</speedbrake>
-
-
-
-
- <!-- =============================================================== -->
- <!-- AVIONICS:                                                       -->
- <!-- =============================================================== -->
-
-
-		<retard>
-			<name>retard</name>
-			<path>Aircraft/CSeries/Sounds/res/retard.wav</path>
-			<mode>looped</mode>
-			<condition>
-				<and>
-					<property>sim/current-view/internal</property>
-					<less-than>
-						<property>/position/altitude-agl-ft</property>
-						<value>20</value>
-					</less-than>
-
-					<greater-than>
-						<property>controls/engines/engine[0]/throttle-pos</property>
-						<value>0.0</value>
-					</greater-than>
-					<greater-than>
-						<property>controls/engines/engine[1]/throttle-pos</property>
-						<value>0.0</value>
-					</greater-than>
-					<less-than>
-						<property>controls/engines/engine[0]/throttle-pos</property>
-						<value>1</value>
-					</less-than>
-					<less-than>
-						<property>controls/engines/engine[1]/throttle-pos</property>
-						<value>1</value>
-					</less-than>
-					<not>
-						<property>/gear/gear[0]/wow</property>
-						<property>/gear/gear[1]/wow</property>
-						<property>/gear/gear[2]/wow</property>
-					</not>
-					<less-than>
-						<property>velocities/airspeed-kt</property>
-						<value>150</value>
-					</less-than>
-					<equals>
-						<property>flight-management/phase</property>
-						<value>APP</value>
-					</equals>
-				</and>
-			</condition>
-			<volume>
-				<property>/sim/sound/effects/volume</property>
-			</volume>
-			<type>avionics</type>
-			<position>
-				<x>22.5</x>
-				<y>0</y>
-				<z>0.78</z>
-			</position>
-		</retard>
-
-		<v1>
-			<name>V1</name>
-			<path>Aircraft/CSeries/Sounds/res/v1.wav</path>
-			<condition>
-				<and>
-					<property>sim/current-view/internal</property>
-					<property>/instrumentation/fmc/vspeeds/V1</property>
-					<!-- At v1 airspeed -->
-					<greater-than-equals>
-						<property>velocities/airspeed-kt</property>
-						<property>/instrumentation/fmc/vspeeds/V1</property>
-					</greater-than-equals>
-					<!-- While on ground -->
-				Now there is 3D Sound and that you can hear other aircraft. 	<property>/gear/gear[0]/wow</property>
-					<property>/gear/gear[1]/wow</property>
-					<property>/gear/gear[2]/wow</property>
-					<!-- With throttles in [flex]Take Off  -->
-					<greater-than>
-						<property>controls/engines/engine[0]/throttle</property>
-						<value>0.7</value>
-					</greater-than>
-					<greater-than>
-						<property>controls/engines/engine[1]/throttle</property>
-						<value>0.7</value>
-					</greater-than>
-				</and>
-			</condition>
-			<type>avionics</type>
-			<volume>
-				<property>/sim/sound/effects/volume</property>
-				<factor>0.8</factor>
-			</volume>
-			<position>
-				<x>22.5</x>
-				<y>0</y>
-				<z>0.78</z>
-			</position>
-		</v1>
-	
-<seatbelt>
-			<name>cabinalert</name>
-			<path>res/cabinalert.wav</path>
-			<mode>once</mode>
-			<condition>
-				<or>
-					<property>sim/sound/no-smoking-sign</property>
-					<property>sim/sound/seatbelt-sign</property>
-					
-					<not><property>sim/sound/no-smoking-sign</property></not>
-					<not><property>sim/sound/seatbelt-sign</property></not>
-				</or>
-			</condition>
-			<volume>
-				<property>sim/current-view/internal</property>
-			</volume>
-		</seatbelt>
-
-  
-	
-		<!-- Overspeed warning -->
-		<overspeed>
-			<name>Overspeed warning</name>
-			<path>Sounds/overspeed2.wav</path>
-			<mode>looped</mode>
-			<type>avionics</type>
-			<condition>
-				<greater-than>
-					<property>velocities/airspeed-kt</property>
-					<value>350</value>
-				</greater-than>
-				<property>sim/current-view/internal</property>
-			</condition>
-			<volume>
-				<property>sim/sound/effects/volume</property>
-			</volume>
-			<reference-dist>10</reference-dist>
-			<max-dist>100</max-dist>
-		</overspeed>
-
-		<stall>
-			<name>stall</name>
-			<mode>looped</mode>
-			<path>/Aircraft/CSeries/Sounds/res/stall.wav</path>
-			<type>avionics</type>
-			<condition>
-				<property>sim/sound/stall-horn</property>
-			</condition>
-			<volume>
-				<property>sim/sound/effects/volume</property>
-				<!--offset>1</offset-->
-			</volume>
-			
-			<reference-dist>10</reference-dist>
-			<max-dist>100.0</max-dist>
-		</stall>
-		
-		<stall-voice>
-			<name>stall-voice</name>
-			<mode>looped</mode>
-			<path>/Aircraft/CSeries/Sounds/res/stall_voice.wav</path>
-			<type>avionics</type>
-			<condition>
-				<property>warnings/stall/active</property>
-			</condition>
-			<volume>
-				<property>sim/sound/effects/volume</property>
-				<factor>3</factor>
-				<!--offset>1</offset-->
-				<min>1</min>
-				<max>6</max>
-			</volume>
-
-			<reference-dist>10</reference-dist>
-			<max-dist>100.0</max-dist>
-		</stall-voice>
-		
-		<autopilotoff>
-			<name>Autopilot off</name>
-			<path>Aircraft/CSeries/Sounds/res/airbus-warning.wav</path>
-			<mode>once</mode>
-			<type>avionics</type>
-			<condition>
-				<equals>
-					<property>sim/alarms/AP-Disengage</property>
-					<value>true</value>
-				</equals>
-				<property>sim/current-view/internal</property>
-			</condition>
-
-			<volume>
-				<property>sim/sound/effects/volume</property>
-				<!--factor>2</factor-->
-			</volume>
-
-			<reference-dist>10</reference-dist>
-			<max-dist>100</max-dist>
-		</autopilotoff>
-		
-		
-		<!-- PTU -->
-
-		<ptu>
-			<name>ptu</name>
-			<mode>once</mode>
-			<path>Aircraft/CSeries/Sounds/res/airbus_ptu.wav</path>
-			<condition>
-				<property>/hydraulics/control/ptu-apply</property>
-			</condition>
-			<position>
-				<x>26</x>
-				<y>0</y>
-				<z>4</z>
-			</position>
-			<reference-dist>10</reference-dist>
-			<max-dist>30</max-dist>
-			<volume>0.8</volume>
-		</ptu>
-
-    <!-- New Warnings/Sounds -->
-
-    <gearwarn>
-        <name>Gear warning</name>
-        <path>/Aircraft/CSeries/Sounds/res/gearwarn.wav</path>
-        <mode>looped</mode>
-        <type>avionics</type>
-        <condition>
-                <property>/controls/gear/horn</property>
-            <less-than-equals>
-                <property>position/altitude-agl-ft</property>
-                <value>400</value>
-            </less-than-equals>
-            <less-than-equals>
-                <property>/velocities/vertical-speed-fps</property>
-                <value>-1</value>
-            </less-than-equals>
-            <not>
-                <property>/controls/gear/gear-down</property>
-            </not>
-        </condition>
-        <volume>
-            <property>sim/sound/effects/volume</property>
-        </volume>
-        <reference-dist>10</reference-dist>
-        <max-dist>100</max-dist>
-    </gearwarn>
-
-    <ap_disc>
-        <name>AP Disconnect warning</name>
-        <path>/Aircraft/CSeries/Sounds/res/airbus-warning.wav</path>
-        <mode>once</mode>
-        <type>avionics</type>
-        <condition>
-            <property>/sim/sound/warnings/ap_disc</property>
-        </condition>
-        <volume>
-            <property>sim/sound/effects/volume</property>
-        </volume>
-        <reference-dist>10</reference-dist>
-        <max-dist>100</max-dist>
-    </ap_disc>
-
-    <chime>
-        <name>Chime</name>
-        <path>/Aircraft/CSeries/Sounds/res/chime.wav</path>
-        <mode>once</mode>
-        <type>avionics</type>
-        <condition>
-            <property>/sim/sound/warnings/chime</property>
-        </condition>
-        <volume>
-            <property>sim/sound/effects/volume</property>
-        </volume>
-        <reference-dist>10</reference-dist>
-        <max-dist>100</max-dist>
-    </chime>
-
-    <crc>
-        <name>CRC</name>
-        <path>/Aircraft/CSeries/Sounds/res/crc.wav</path>
-        <mode>looped</mode>
-        <type>avionics</type>
-        <condition>
-            <property>/warnings/master-warning-light</property>
-            <property>/sim/sound/warnings/crc</property>
-        </condition>
-        <volume>
-            <property>sim/sound/effects/volume</property>
-        </volume>
-        <reference-dist>10</reference-dist>
-        <max-dist>100</max-dist>
-    </crc>
-    
-    <!-- APU Sounds -->
-    
-    <apu-start>
-        <name>apu-strt</name>
-        <mode>once</mode>
-        <path>Aircraft/CSeries/Sounds/res/apu_strt.wav</path>
-        <condition>
-			<property>controls/APU/starter</property>
-			<less-than>
-				<property>engines/apu/rpm</property>
-				<value>100</value>
-			</less-than>
-		</condition>
-		<position>
-			<x>26</x>
-			<y>0</y>
-			<z>4</z>
-		</position>
-		<reference-dist>10</reference-dist>
-		<max-dist>30</max-dist>
-		<volume>0.3</volume>
-    </apu-start>
-    
-	<apu-running2>
-        <name>apu-run2</name>
-        <mode>looped</mode>
-        <path>Aircraft/CSeries/Sounds/res/apu_run.wav</path>
-        <condition>
-			<property>controls/APU/master-switch</property>
-			<equals>
-				<property>engines/apu/rpm</property>
-				<value>100</value>
-			</equals>
-		</condition>
-		<position>
-			<x>26</x>
-			<y>0</y>
-			<z>4</z>
-		</position>
-		<reference-dist>10</reference-dist>
-		<max-dist>30</max-dist>
-		<volume>0.3</volume>
-    </apu-running2>
-	
-	
-	<apu-running>
-        <name>apu-run</name>
-        <mode>looped</mode>
-        <path>Aircraft/CSeries/Sounds/res/apu_run.wav</path>
-        <condition>
-			<not>
-				<property>controls/APU/starter</property>
-			</not>
-			<greater-than-equals>
-				<property>engines/apu/rpm</property>
-				<value>80</value>
-			</greater-than-equals>
-		</condition>
-		<position>
-			<x>26</x>
-			<y>0</y>
-			<z>4</z>
-		</position>
-		<reference-dist>10</reference-dist>
-		<max-dist>30</max-dist>
-		<volume>0.3</volume>
-    </apu-running>
-    
-	<apu-shutdown>
-        <name>apu-stop</name>
-        <mode>once</mode>
-        <path>Aircraft/CSeries/Sounds/res/apu_stop.wav</path>
-        <condition>
-			<not>
-				<property>controls/APU/starter</property>
-			</not>
-			<less-than>
-				<property>engines/apu/rpm</property>
-				<value>100</value>
-			</less-than>
-			<greater-than>
-				<property>engines/apu/rpm</property>
-				<value>0</value>
-			</greater-than>
-		</condition>
-		<position>
-			<x>26</x>
-			<y>0</y>
-			<z>4</z>
-		</position>
-		<reference-dist>10</reference-dist>
-		<max-dist>30</max-dist>
-		<volume>0.5</volume>
-    </apu-shutdown>
-		
-		<!-- Announcements -->
-
-		<!--<announcement>
-			<name>welcome</name>
-			<path>Aircraft/CSeries/Sounds/announce/welcome.wav</path>
-			<mode>once</mode>
-			<condition>
-				<property>sim/sound/welcome</property>
-			</condition>
-			<volume>
-				<factor>8</factor>
-			</volume>
-			<position>
-				<x>0.00</x>
-				<y>0.00</y>
-				<z>0.00</z>
-			</position>
-			<reference-dist>10.0</reference-dist>
-			<max-dist>100.0</max-dist>
-		</announcement>
-
-		<announcement>
-			<name>safety</name>
-			<path>Aircraft/CSeries/Sounds/announce/safety.wav</path>
-			<mode>once</mode>
-			<condition>
-				<property>sim/sound/safety</property>
-			</condition>
-			<volume>
-				<factor>8</factor>
-			</volume>
-			<position>
-				<x>0.00</x>
-				<y>0.00</y>
-				<z>0.00</z>
-			</position>
-			<reference-dist>10.0</reference-dist>
-			<max-dist>100.0</max-dist>
-		</announcement>
-
-		<announcement>
-			<name>cruise</name>
-			<path>Aircraft/CSeries/Sounds/announce/cruise.wav</path>
-			<mode>once</mode>
-			<condition>
-				<property>sim/sound/cruise</property>
-			</condition>
-			<volume>
-				<factor>8</factor>
-			</volume>
-			<position>
-				<x>0.00</x>
-				<y>0.00</y>
-				<z>0.00</z>
-			</position>
-			<reference-dist>10.0</reference-dist>
-			<max-dist>100.0</max-dist>
-		</announcement>
-
-		<announcement>
-			<name>climb</name>
-			<path>Aircraft/CSeries/Sounds/announce/climb.wav</path>
-			<mode>once</mode>
-			<condition>
-				<property>sim/sound/climb</property>
-			</condition>
-			<position>
-				<x>0.00</x>
-				<y>0.00</y>
-				<z>0.00</z>
-			</position>
-			<reference-dist>10.0</reference-dist>
-			<max-dist>100.0</max-dist>
-		</announcement>
-
-		<announcement>
-			<name>cruise-seatbelt</name>
-			<path>Aircraft/CSeries/Sounds/announce/cruise-seatbelt.wav</path>
-			<mode>once</mode>
-			<condition>
-				<property>sim/sound/cruise-seatbelt</property>
-			</condition>
-			<volume>
-				<factor>8</factor>
-			</volume>
-			<position>
-				<x>0.00</x>
-				<y>0.00</y>
-				<z>0.00</z>
-			</position>
-			<reference-dist>10.0</reference-dist>
-			<max-dist>100.0</max-dist>
-		</announcement>
-
-		<announcement>
-			<name>turbulence</name>
-			<path>Aircraft/CSeries/Sounds/announce/turbulence.wav</path>
-			<mode>once</mode>
-			<condition>
-				<property>sim/sound/turbulence</property>
-			</condition>
-			<volume>
-				<factor>8</factor>
-			</volume>
-			<position>
-				<x>0.00</x>
-				<y>0.00</y>
-				<z>0.00</z>
-			</position>
-			<reference-dist>10.0</reference-dist>
-			<max-dist>100.0</max-dist>
-		</announcement>
-
-		<announcement>
-			<name>descent</name>
-			<path>Aircraft/CSeries/Sounds/announce/descent.wav</path>
-			<mode>once</mode>
-			<condition>
-				<property>sim/sound/descent</property>
-			</condition>
-			<volume>
-				<factor>8</factor>
-			</volume>
-			<position>
-				<x>0.00</x>
-				<y>0.00</y>
-				<z>0.00</z>
-			</position>
-			<reference-dist>10.0</reference-dist>
-			<max-dist>100.0</max-dist>
-		</announcement>
-
-		<announcement>
-			<name>land</name>
-			<path>Aircraft/CSeries/Sounds/announce/land.wav</path>
-			<mode>once</mode>
-			<condition>
-				<property>sim/sound/land</property>
-			</condition>
-			<volume>
-				<factor>8</factor>
-			</volume>
-			<position>
-				<x>0.00</x>
-				<y>0.00</y>
-				<z>0.00</z>
-			</position>
-			<reference-dist>10.0</reference-dist>
-			<max-dist>100.0</max-dist>
-		</announcement>
-
-		<announcement>
-			<name>gate</name>
-			<path>Aircraft/CSeries/Sounds/announce/gate.wav</path>
-			<mode>once</mode>
-			<condition>
-				<property>sim/sound/gate</property>
-			</condition>
-			<volume>
-				<factor>8</factor>
-			</volume>
-			<position>
-				<x>0.00</x>
-				<y>0.00</y>
-				<z>0.00</z>
-			</position>
-			<reference-dist>10.0</reference-dist>
-			<max-dist>100.0</max-dist>
-		</announcement>
-
-		<announcement>
-			<name>emergency</name>
-			<path>Aircraft/CSeries/Sounds/announce/emergency.wav</path>
-			<mode>once</mode>
-			<condition>
-				<property>sim/sound/emergency</property>
-			</condition>
-			<volume>
-				<factor>8</factor>
-			</volume>
-			<position>
-				<x>0.00</x>
-				<y>0.00</y>
-				<z>0.00</z>
-			</position>
-			<reference-dist>10.0</reference-dist>
-			<max-dist>100.0</max-dist>
-		</announcement>
-
-		<announcement>
-			<name>pretakeoff</name>
-			<path>Aircraft/CSeries/Sounds/announce/pretakeoff.wav</path>
-			<mode>once</mode>
-			<condition>
-				<property>sim/sound/pretakeoff</property>
-			</condition>
-			<volume>
-				<factor>8</factor>
-			</volume>
-			<position>
-				<x>0.00</x>
-				<y>0.00</y>
-				<z>0.00</z>
-			</position>
-			<reference-dist>10.0</reference-dist>
-			<max-dist>100.0</max-dist>
-		</announcement>
-
-		<announcement>
-			<name>boarding2</name>
-			<path>Aircraft/CSeries/Sounds/announce/music2.wav</path>
-			<mode>looped</mode>
-			<condition>
-				<property>sim/sound/music2</property>
-			</condition>
-			<volume>
-				<factor>8</factor>
-			</volume>
-			<position>
-				<x>0.00</x>
-				<y>0.00</y>
-				<z>0.00</z>
-			</position>
-			<reference-dist>10.0</reference-dist>
-			<max-dist>100.0</max-dist>
-		</announcement>
-
-		<announcement>
-			<name>brace</name>
-			<path>Aircraft/CSeries/Sounds/announce/brace.wav</path>
-			<mode>once</mode>
-			<condition>
-				<property>sim/sound/brace</property>
-			</condition>
-			<volume>
-				<factor>8</factor>
-			</volume>
-			<position>
-				<x>0.00</x>
-				<y>0.00</y>
-				<z>0.00</z>
-			</position>
-			<reference-dist>10.0</reference-dist>
-			<max-dist>100.0</max-dist>
-		</announcement>-->
-
-		<!-- CLICKS -->
-		<switch>
-			<name>switch</name>
-			<mode>once</mode>
-			<path>Aircraft/CSeries/Sounds/res/click.wav</path>
-			<condition>
-				<property>sim/sound/click</property>
-			</condition>
-			<volume>
-				<factor>1.4</factor>
-			</volume>
-			<position>
-				<x>-24</x>
-				<y>0</y>
-				<z>0.18</z>
-			</position>
-			<reference-dist>20</reference-dist>
-			<max-dist>200.0</max-dist>
-		</switch>
-
-		<switch>
-			<name>switch1</name>
-			<mode>once</mode>
-			<path>Aircraft/CSeries/Sounds/res/click1.wav</path>
-			<condition>
-				<property>sim/sound/click1</property>
-			</condition>
-			<volume>
-				<factor>2.5</factor>
-			</volume>
-			<position>
-				<x>-24</x>
-				<y>0</y>
-				<z>0.18</z>
-			</position>
-			<reference-dist>20</reference-dist>
-			<max-dist>200.0</max-dist>
-		</switch>
-		<switch>
-			<name>switch2</name>
-			<mode>once</mode>
-			<path>Aircraft/CSeries/Sounds/res/click2.wav</path>
-			<condition>
-				<property>sim/sound/click2</property>
-			</condition>
-			<volume>
-				<factor>2.5</factor>
-			</volume>
-			<position>
-				<x>-24</x>
-				<y>0</y>
-				<z>0.18</z>
-			</position>
-			<reference-dist>20</reference-dist>
-			<max-dist>200.0</max-dist>
-		</switch>
-		<switch>
-			<name>click3</name>
-			<mode>once</mode>
-			<path>Aircraft/CSeries/Sounds/res/click3.wav</path>
-			<condition>
-				<property>sim/sound/click3</property>
-			</condition>
-			<volume>
-				<factor>2.5</factor>
-			</volume>
-			<position>
-				<x>-24</x>
-				<y>0</y>
-				<z>0.18</z>
-			</position>
-			<reference-dist>20</reference-dist>
-			<max-dist>200.0</max-dist>
-		</switch>
-		<switch>
-			<name>click4</name>
-			<mode>once</mode>
-			<path>Aircraft/CSeries/Sounds/res/click4.wav</path>
-			<condition>
-				<property>sim/sound/click4</property>
-			</condition>
-			<volume>
-				<factor>1.5</factor>
-			</volume>
-			<position>
-				<x>-24</x>
-				<y>0</y>
-				<z>0.18</z>
-			</position>
-			<reference-dist>20</reference-dist>
-			<max-dist>200.0</max-dist>
-		</switch>
-		<switch>
-			<name>click5</name>
-			<mode>once</mode>
-			<path>Aircraft/CSeries/Sounds/res/click5.wav</path>
-			<condition>
-				<property>sim/sound/click5</property>
-			</condition>
-			<volume>
-				<factor>1.7</factor>
-			</volume>
-			<position>
-				<x>-24</x>
-				<y>0</y>
-				<z>0.18</z>
-			</position>
-			<reference-dist>20</reference-dist>
-			<max-dist>200.0</max-dist>
-		</switch>
-		<switch>
-			<name>click6</name>
-			<mode>once</mode>
-			<path>Aircraft/CSeries/Sounds/res/click6.wav</path>
-			<condition>
-				<property>sim/sound/click6</property>
-			</condition>
-			<volume>
-				<factor>1</factor>
-			</volume>
-			<position>
-				<x>-24</x>
-				<y>0</y>
-				<z>0.18</z>
-			</position>
-			<reference-dist>2</reference-dist>
-			<max-dist>200.0</max-dist>
-		</switch>
-		<switch>
-			<name>click7</name>
-			<mode>once</mode>
-			<path>Aircraft/CSeries/Sounds/res/click7.wav</path>
-			<condition>
-				<property>sim/sound/click7</property>
-			</condition>
-			<volume>
-				<factor>1</factor>
-			</volume>
-			<position>
-				<x>-24</x>
-				<y>0</y>
-				<z>0.18</z>
-			</position>
-			<reference-dist>2</reference-dist>
-			<max-dist>200.0</max-dist>
-		</switch>
-		<switch>
-			<name>click8</name>
-			<mode>once</mode>
-			<path>Aircraft/CSeries/Sounds/res/click8.wav</path>
-			<condition>
-				<property>sim/sound/click8</property>
-			</condition>
-			<volume>
-				<factor>1</factor>
-			</volume>
-			<position>
-				<x>-24</x>
-				<y>0</y>
-				<z>0.18</z>
-			</position>
-			<reference-dist>2</reference-dist>
-			<max-dist>200.0</max-dist>
-		</switch>
-
-<avionics>
-			<name>avionics fan and noise</name>
-			<path>Aircraft/CSeries/Sounds/avionics.wav</path>
-			<mode>looped</mode>
-			<condition>
-				<property>sim/current-view/internal</property>
-				<greater-than>
-					<property>systems/electrical/outputs/efis</property>
-					<value>0</value>
-				</greater-than>
-			</condition>
-			<position>
-				<x>-17</x>
+				<x>-14</x>
 				<y>0.01</y>
-				<z>-1.95</z>
-			</position>	
-			<volume>
-				<factor>0.2</factor>
-				<max>0.5</max>
-			</volume>
-			<reference-dist>1.2</reference-dist>
-			<max-dist>5</max-dist>
-		</avionics>
-
-
-
-
-
-	</fx>
+				<z>-3.201</z>
+			</position>
+			<reference-dist>6</reference-dist>
+			<max-dist>25</max-dist>
+		</rumble>
+		<flaps-lever>
+			<name>Flaps lever</name>
+			<path>Aircraft/CRJ700-family/Sounds/flaps-lever.wav</path>
+			<mode>once</mode>
+			<condition>
+				<property>sim/sound/flaps-lever</property>
+				<property>sim/current-view/internal</property>
+			</condition>
+			<position>
+				<x>-13.7</x>
+				<y>0.1760</y>
+				<z>-1.2</z>
+			</position>
+			<max-dist>2</max-dist>
+			<reference-dist>1</reference-dist>
+		</flaps-lever>
+		<gear-lever>
+			<name>Gear lever</name>
+			<path>Aircraft/CRJ700-family/Sounds/gear-lever.wav</path>
+			<mode>once</mode>
+			<condition>
+				<property>sim/sound/gear-lever</property>
+				<property>sim/current-view/internal</property>
+			</condition>
+			<position>
+				<x>-13.7</x>
+				<y>0.1760</y>
+				<z>-1.2</z>
+			</position>
+			<max-dist>2</max-dist>
+			<reference-dist>1</reference-dist>
+		</gear-lever>
+	</fx>	
 </PropertyList>
