@@ -114,7 +114,7 @@
 
        <vstab x="-11.6926" y="0.00" z="-0.7834" chord="5" length="7.9" taper="0.4" sweep="35" effectiveness="1.5">
           <stall aoa="15" width="2" peak="1.5"/>
-          <flap0 start="0" end="1" lift="1.3" drag="1.3"/>
+          <flap0 start="0" end="1" lift="1.6" drag="1.6"/>
           <control-input axis="/controls/flight/rudder" control="FLAP0" invert="true"/>
           <control-input axis="/controls/flight/rudder-trim" control="FLAP0" invert="true"/>
           <control-output control="FLAP0" prop="/surface-positions/rudder-pos-norm" min="1" max="-1"/>

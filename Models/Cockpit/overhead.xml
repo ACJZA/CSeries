@@ -634,11 +634,6 @@
 	    <button>0</button>
 	    <repeatable type="bool">false</repeatable>
 	    <binding>
-		<command>property-assign</command>
-		<property>controls/pneumatic/bleed-source</property>
-		<value>1</value>
-	    </binding>
-	    <binding>
 		<command>property-toggle</command>
 		<property>controls/pneumatic/l-bleed</property>
 	    </binding>
@@ -662,11 +657,6 @@
 	    <button>0</button>
 	    <repeatable type="bool">false</repeatable>
 	    <binding>
-		<command>property-assign</command>
-		<property>controls/pneumatic/bleed-source</property>
-		<value>3</value>
-	    </binding>
-	    <binding>
 		<command>property-toggle</command>
 		<property>controls/pneumatic/r-bleed</property>
 	    </binding>
@@ -689,11 +679,6 @@
 	<action>
 	    <button>0</button>
 	    <repeatable type="bool">false</repeatable>
-	    <binding>
-		<command>property-assign</command>
-		<property>controls/pneumatic/bleed-source</property>
-		<value>2</value>
-	    </binding>
 	    <binding>
 		<command>property-toggle</command>
 		<property>controls/pneumatic/APU-bleed</property>

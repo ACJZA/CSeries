@@ -3,7 +3,7 @@ MATERIAL "DefaultWhite" rgb 1.0000 1.0000 1.0000  amb 0.2000 0.2000 0.2000  emis
 MATERIAL "DefaultWhite.004" rgb 1.0000 1.0000 1.0000  amb 1.0000 1.0000 1.0000  emis 0.0000 0.0000 0.0000  spec 0.5000 0.5000 0.5000  shi 10 trans 0.0000
 MATERIAL "freq1.009" rgb 0.8000 0.8000 0.8000  amb 1.0000 1.0000 1.0000  emis 0.0000 0.0000 0.0000  spec 0.5000 0.5000 0.5000  shi 12 trans 0.0000
 MATERIAL "ac3dmat1.002" rgb 1.0000 1.0000 1.0000  amb 1.0000 1.0000 1.0000  emis 1.0000 1.0000 1.0000  spec 1.0000 1.0000 1.0000  shi 128 trans 0.0000
-MATERIAL "black.002" rgb 0.0000 0.0000 0.0000  amb 0.0000 0.0000 0.0000  emis 0.0000 0.0000 0.0000  spec 0.5000 0.5000 0.5000  shi 12 trans 0.0000
+MATERIAL "black.002" rgb 1 1 1  amb 1 1 1  emis 1 1 1  spec 0.5000 0.5000 0.5000  shi 12 trans 0.0000
 MATERIAL "throttlepanel.003" rgb 0.8000 0.8000 0.8000  amb 1.0000 1.0000 1.0000  emis 0.0000 0.0000 0.0000  spec 0.0000 0.0000 0.0000  shi 12 trans 0.0000
 OBJECT world
 name "Blender_export__flightdeck.ac"
@@ -86099,7 +86099,7 @@ OBJECT poly
 name "mfdL.display"
 loc -0.6396940 0.1388730 0.2344420
 crease 35.0
-texture "ND.png"
+texture "PFD.png"
 texrep 1 1
 numvert 4
 -0.0145859 0.1133470 0.0000037
@@ -86119,7 +86119,7 @@ OBJECT poly
 name "mfdLnav"
 loc -0.6396940 0.1388730 0.2344420
 crease 35.0
-texture "ND.png"
+texture "PFD.png"
 texrep 1 1
 numvert 4
 -0.0145859 0.1133470 0.1506500
@@ -86139,7 +86139,7 @@ OBJECT poly
 name "mfdLnav.off"
 loc -0.6380948 0.1386445 0.2344420
 crease 35.0
-texture "ND.png"
+texture "PFD.png"
 texrep 1 1
 numvert 4
 -0.0147229 0.1144113 0.1520645
@@ -86418,7 +86418,7 @@ OBJECT poly
 name "mfdR.display"
 loc -0.6396940 0.1388730 -0.2395550
 crease 35.0
-texture "ND.png"
+texture "PFD.png"
 texrep 1 1
 numvert 4
 -0.0145859 0.1133470 0.1506500
@@ -86438,7 +86438,7 @@ OBJECT poly
 name "mfdRnav"
 loc -0.6396940 0.1388730 -0.2346196
 crease 35.0
-texture "ND.png"
+texture "PFD.png"
 texrep 1 1
 numvert 4
 -0.0145859 0.1133470 0.1506500
@@ -86458,7 +86458,7 @@ OBJECT poly
 name "mfdRnav.off"
 loc -0.6380948 0.1386445 -0.2346196
 crease 35.0
-texture "ND.png"
+texture "PFD.png"
 texrep 1 1
 numvert 4
 -0.0147229 0.1144113 0.1520645
@@ -89274,7 +89274,27 @@ refs 4
 1 0.932377 0.468005
 kids 0
 OBJECT poly
-name "pfdL"
+name "pfdL.display"
+loc -0.6396940 0.1388730 0.5762670
+crease 35.0
+texture "PFD.png"
+texrep 1 1
+numvert 4
+-0.0145859 0.1133470 0.1506500
+0.0145859 -0.1133470 0.1506500
+-0.0145859 0.1133470 -0.1506500
+0.0145859 -0.1133470 -0.1506500
+numsurf 1
+SURF 0X0
+mat 4
+refs 4
+0 0.182428 0.977178
+1 0.182428 0.039183
+3 0.800674 0.039183
+2 0.800674 0.977178
+kids 0
+OBJECT poly
+name "pfdLcase"
 loc -0.6396940 0.1388730 0.5762670
 crease 35.0
 texture "display.png"
@@ -89531,26 +89551,6 @@ refs 4
 38 0.977195 0.982148
 36 0.014717 0.982148
 32 0.014717 0.982148
-kids 0
-OBJECT poly
-name "pfdL.display"
-loc -0.6396940 0.1388730 0.5762670
-crease 35.0
-texture "ND.png"
-texrep 1 1
-numvert 4
--0.0145859 0.1133470 0.1506500
-0.0145859 -0.1133470 0.1506500
--0.0145859 0.1133470 -0.1506500
-0.0145859 -0.1133470 -0.1506500
-numsurf 1
-SURF 0X0
-mat 4
-refs 4
-0 0.182428 0.977178
-1 0.182428 0.039183
-3 0.800674 0.039183
-2 0.800674 0.977178
 kids 0
 OBJECT poly
 name "pfdR"
@@ -89815,7 +89815,7 @@ OBJECT poly
 name "pfdR.display"
 loc -0.6396940 0.1388730 -0.5828500
 crease 35.0
-texture "ND.png"
+texture "PFD.png"
 texrep 1 1
 numvert 4
 -0.0145859 0.1133470 0.1506500
@@ -101883,7 +101883,7 @@ refs 4
 1 0.002615 0.545712
 kids 0
 OBJECT poly
-name "terr.btn.001"
+name "terr.btn.R"
 loc -0.5382159 0.3541380 -0.1669810
 crease 35.0
 texture "freqpanel.png"
@@ -102001,7 +102001,7 @@ refs 4
 1 0.065979 0.542208
 kids 0
 OBJECT poly
-name "tfc.btn.001"
+name "tfc.btn.R"
 loc -0.5382159 0.3409300 -0.1669810
 crease 35.0
 texture "freqpanel.png"
@@ -127232,7 +127232,7 @@ refs 4
 1 0.123492 0.540039
 kids 0
 OBJECT poly
-name "wx.btn.001"
+name "wx.btn.R"
 loc -0.5382159 0.3281000 -0.1669810
 crease 35.0
 texture "freqpanel.png"

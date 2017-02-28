@@ -216,6 +216,8 @@
             </config>
             </view>
 	    <chase-distance-m>-50</chase-distance-m>
+            
+            <checklists include="Dialogs/checklists.xml"/>
     </sim>  
 	
 <instrumentation include="Systems/init-instrumentation.xml"/>
@@ -361,7 +363,7 @@
             </input>
     <nasal>
         <cseries>
-            <file>Aircraft/CSeries/Models/Cockpit/ND.nas</file>    
+            <file>Aircraft/CSeries/Models/Cockpit/ND.nas</file>  
             <file>Aircraft/CSeries/Nasal/main.nas</file>
             <file>Aircraft/CSeries/Nasal/engines.nas</file>
             <file>Aircraft/CSeries/Nasal/electrical.nas</file>

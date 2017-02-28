@@ -564,6 +564,209 @@
                     <z-m>-0.5273</z-m>
 		</center>
 	</animation>
+        <!--Multifunctional Panels left and right of autopilot panel-->
+        <!--ND Control-->
+        <!--ND Left-->
+        <animation>
+            <type>pick</type>
+            <object-name>terr.btn</object-name>
+            <action>
+                <button>0</button>
+                <repeatable>false</repeatable>
+                <binding>
+                    <command>property-toggle</command>
+                    <property>instrumentation/efis/inputs/terr</property>
+                </binding>
+                <binding>
+                    <command>property-toggle</command>
+                    <property>controls/cockpit/terrain-button</property>
+                </binding>
+                <mod-up>
+                    <binding>
+                        <command>property-toggle</command>
+                        <property>controls/cockpit/terrain-button</property>
+                    </binding>
+                </mod-up>
+            </action>
+        </animation>
+        <animation>
+                <type>translate</type>
+                <object-name>terr.btn</object-name>
+                <property>controls/cockpit/terrain-button</property>
+                <factor>-0.0015</factor>
+                <axis>
+                        <x>1</x>
+                        <y>0</y>
+                        <z>0</z>
+                </axis>
+        </animation>
+        <animation>
+            <type>pick</type>
+            <object-name>tfc.btn</object-name>
+            <action>
+                <button>0</button>
+                <repeatable>false</repeatable>
+                <binding>
+                    <command>property-toggle</command>
+                    <property>instrumentation/efis/inputs/tfc</property>
+                </binding>
+                <binding>
+                    <command>property-toggle</command>
+                    <property>controls/cockpit/tfc-button</property>
+                </binding>
+                <mod-up>
+                    <binding>
+                        <command>property-toggle</command>
+                        <property>controls/cockpit/tfc-button</property>
+                    </binding>
+                </mod-up>
+            </action>
+        </animation>
+        <animation>
+                <type>translate</type>
+                <object-name>tfc.btn</object-name>
+                <property>controls/cockpit/tfc-button</property>
+                <factor>-0.0015</factor>
+                <axis>
+                        <x>1</x>
+                        <y>0</y>
+                        <z>0</z>
+                </axis>
+        </animation>
+        <animation>
+            <type>pick</type>
+            <object-name>wx.btn</object-name>
+            <action>
+                <button>0</button>
+                <repeatable>false</repeatable>
+                <binding>
+                    <command>property-toggle</command>
+                    <property>instrumentation/efis/inputs/wxr</property>
+                </binding>
+                <binding>
+                    <command>property-toggle</command>
+                    <property>controls/cockpit/wx-button</property>
+                </binding>
+                <mod-up>
+                    <binding>
+                        <command>property-toggle</command>
+                        <property>controls/cockpit/wx-button</property>
+                    </binding>
+                </mod-up>
+            </action>
+        </animation>
+        <animation>
+                <type>translate</type>
+                <object-name>wx.btn</object-name>
+                <property>controls/cockpit/wx-button</property>
+                <factor>-0.0015</factor>
+                <axis>
+                        <x>1</x>
+                        <y>0</y>
+                        <z>0</z>
+                </axis>
+        </animation>
+        <!--ND Right-->
+        <animation>
+            <type>pick</type>
+            <object-name>terr.btn.R</object-name>
+            <action>
+                <button>0</button>
+                <repeatable>false</repeatable>
+                <binding>
+                    <command>property-toggle</command>
+                    <property>instrumentation/efis[1]/inputs/terr</property>
+                </binding>
+                <binding>
+                    <command>property-toggle</command>
+                    <property>controls/cockpit/terrain-button-right</property>
+                </binding>
+                <mod-up>
+                    <binding>
+                        <command>property-toggle</command>
+                        <property>controls/cockpit/terrain-button-right</property>
+                    </binding>
+                </mod-up>
+            </action>
+        </animation>
+        <animation>
+                <type>translate</type>
+                <object-name>terr.btn.R</object-name>
+                <property>controls/cockpit/terrain-button-right</property>
+                <factor>-0.0015</factor>
+                <axis>
+                        <x>1</x>
+                        <y>0</y>
+                        <z>0</z>
+                </axis>
+        </animation>
+        <animation>
+            <type>pick</type>
+            <object-name>tfc.btn.R</object-name>
+            <action>
+                <button>0</button>
+                <repeatable>false</repeatable>
+                <binding>
+                    <command>property-toggle</command>
+                    <property>instrumentation/efis[1]/inputs/tfc</property>
+                </binding>
+                <binding>
+                    <command>property-toggle</command>
+                    <property>controls/cockpit/tfc-button-right</property>
+                </binding>
+                <mod-up>
+                    <binding>
+                        <command>property-toggle</command>
+                        <property>controls/cockpit/tfc-button-right</property>
+                    </binding>
+                </mod-up>
+            </action>
+        </animation>
+        <animation>
+                <type>translate</type>
+                <object-name>tfc.btn.R</object-name>
+                <property>controls/cockpit/tfc-button-right</property>
+                <factor>-0.0015</factor>
+                <axis>
+                        <x>1</x>
+                        <y>0</y>
+                        <z>0</z>
+                </axis>
+        </animation>
+        <animation>
+            <type>pick</type>
+            <object-name>wx.btn.R</object-name>
+            <action>
+                <button>0</button>
+                <repeatable>false</repeatable>
+                <binding>
+                    <command>property-toggle</command>
+                    <property>instrumentation/efis[1]/inputs/wxr</property>
+                </binding>
+                <binding>
+                    <command>property-toggle</command>
+                    <property>controls/cockpit/wx-button-right</property>
+                </binding>
+                <mod-up>
+                    <binding>
+                        <command>property-toggle</command>
+                        <property>controls/cockpit/wx-button-right</property>
+                    </binding>
+                </mod-up>
+            </action>
+        </animation>
+        <animation>
+                <type>translate</type>
+                <object-name>wx.btn.R</object-name>
+                <property>controls/cockpit/wx-button-right</property>
+                <factor>-0.0015</factor>
+                <axis>
+                        <x>1</x>
+                        <y>0</y>
+                        <z>0</z>
+                </axis>
+        </animation>
+        
         <!--Autopilot-->
         <!--Master: Displays off without power-->
 <animation>
@@ -1577,5 +1780,51 @@
 	<pitch-deg>-7</pitch-deg>
   </offsets>
 </model>
+
+
+<!--PFD L-->
+<animation>
+  <type>select</type>
+  <object-name>pfdL.display</object-name>
+  <condition>
+    <less-than-equals>
+    <property>/systems/electrical/left-bus</property>
+    <value>10</value>
+    </less-than-equals>
+  </condition>
+</animation>
+<animation>
+  <type>select</type>
+  <object-name>pfdL</object-name>
+  <condition>
+    <greater-than>
+    <property>/systems/electrical/left-bus</property>
+    <value>10</value>
+    </greater-than>
+  </condition>
+</animation>
+<animation>
+	<type>pick</type>
+	<object-name>pfdL</object-name>
+	<action>
+		<button>0</button>
+		<repeatable>false</repeatable>
+		<binding>
+			<command>nasal</command>
+			<script>cseries.showPfd();</script>
+		</binding>
+	</action>
+</animation>
+<model>
+  <name>pfdL</name>
+  <path>Aircraft/CSeries/Models/Cockpit/Instruments/pfd/pfdL.xml</path>
+  <offsets>
+    <x-m>-0.63969</x-m>
+    <y-m>0.0</y-m>
+    <z-m> 0.13887</z-m>
+	<pitch-deg>-7.5</pitch-deg>
+  </offsets>
+</model>
+
 	
 </PropertyList>

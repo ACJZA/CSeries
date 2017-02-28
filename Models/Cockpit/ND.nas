@@ -63,8 +63,8 @@ var _list = setlistener("systems/electrical/outputs/efis", func() {
 
     nd_display.cpt = canvas.new({
         "name": "ND",
-        "size": [1024, 1024],
-        "view": [1024, 1024],
+        "size": [1024, 2048],
+        "view": [1024, 2048],
         "mipmapping": 1
     });
 

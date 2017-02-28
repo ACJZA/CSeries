@@ -9,6 +9,25 @@
 # If you need to run nasal as loop, add it in this function
 ############################################
 global_system = func{
+
+#Select Bleed Source
+
+var bleedL=getprop("/controls/pneumatic/l-bleed");
+var bleedR=getprop("/controls/pneumatic/r-bleed");
+var bleedA=getprop("/controls/pneumatic/APU-bleed");
+
+if(bleedL==1 and getprop("/engines/engine/n1")>=50 ){
+    setprop("controls/pneumatic/bleed-source", 1);
+}else if(bleedR == 1 and getprop("/engines/engine[1]/n1") >=50 ){
+    setprop("controls/pneumatic/bleed-source", 3);
+}else if(bleedA == 1 and getprop("/engines/apu/running") ==1 ){
+    setprop("controls/pneumatic/bleed-source", 2);
+}else{
+    setprop("controls/pneumatic/bleed-source", 0);
+}
+
+
+
 #Lights
 if(getprop("/systems/electrical/outputs/nav-lights")>=15){
 setprop("/systems/electrical/outputs/nav-lights-norm", 1);
