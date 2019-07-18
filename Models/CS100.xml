@@ -410,7 +410,7 @@
 		<type>spin</type>
 		<object-name>fanL</object-name>
 		<object-name>spinnerL</object-name>
-                <property>engines/engine/rpm</property>
+                <property>engines/engine/n1</property>
 		<factor>67</factor>
 		<axis>
 			<x>-1</x>
@@ -427,7 +427,7 @@
 		<type>spin</type>
 		<object-name>fanR</object-name>
 		<object-name>spinnerR</object-name>
-                <property>engines/engine[1]/rpm</property>
+                <property>engines/engine[1]/n1</property>
 		<factor>67</factor>
 		<axis>
 			<x>-1</x>

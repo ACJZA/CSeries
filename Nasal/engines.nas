@@ -154,10 +154,10 @@ var Engine = {
     update: func
     {
         me.starter.setBoolValue(me.starting);
-        if (me.running.getBoolValue() and !me.started)
-        {
-            me.running.setBoolValue(0);
-        }
+        #if (me.running.getBoolValue() and !me.started)
+        #{
+        #    me.running.setBoolValue(0);
+        #}
         if (me.fire_bottle_discharge.getBoolValue())
         {
             me.on_fire.setBoolValue(0);
@@ -166,11 +166,9 @@ var Engine = {
         {
             me.serviceable.setBoolValue(0);
         }
-        if (me.cutoff.getBoolValue() or !me.serviceable.getBoolValue() or me.out_of_fuel.getBoolValue())
+        if (!me.serviceable.getBoolValue() or me.out_of_fuel.getBoolValue())
            {
-            var rpm = me.rpm.getValue();
-            rpm -= getprop("sim/time/delta-realtime-sec") * 8;
-            me.rpm.setValue(rpm <= 0 ? 0 : rpm);
+            me.cutoff.setBoolValue(1);
             me.running.setBoolValue(0);
             me.throttle_lever.setValue(0);
             me.thrust_mode.setValue(0);
@@ -181,28 +179,16 @@ var Engine = {
         {
             if (me._has_bleed_air())
             {
-                var rpm = me.rpm.getValue();
-                rpm += getprop("sim/time/delta-realtime-sec") * 4;
-                me.rpm.setValue(rpm);
-                if (rpm >= me.n1.getValue())
-                {
-                    me.running.setBoolValue(1);
-                    me.starting = 0;
-                    me.started = 1;
-                }
-                else
-                {
-                    me.running.setBoolValue(0);
-                }
+		me.starter.setBoolValue(1);
             }
             else
             {
-                me.starting = 0;
+                me.starter.setBoolValue(0);
             }
         }
         elsif (me.running.getBoolValue())
         {
-            me.starting = 0;
+            me.starter.setBoolValue(0);
             if (me.reverser_cmd.getBoolValue())
             {
                     me.reverser.setBoolValue(1);
@@ -213,7 +199,6 @@ var Engine = {
                 me.reverser.setBoolValue(0);
             }
             me.throttle_lever.setValue(me.throttle_at_idle + (1 - me.throttle_at_idle) * me.throttle.getValue());
-            me.rpm.setValue(me.n1.getValue());
         }
 
         var total_fuel_gal = props.globals.getNode("consumables/fuel/total-fuel-gal_us", 1).getValue();

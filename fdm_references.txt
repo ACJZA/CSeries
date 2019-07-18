@@ -1,0 +1,46 @@
+
+  <reference
+	  title="Airport Planning Publication"
+	  url="https://eservices.aero.bombardier.com/wps/wcm/connect/eServices/29f7a245-07de-4ed2-b26d-847ee76b71d9/A220-100APP-Issue020-20Jun2019.pdf?MOD=AJPERES&CVID=mKjMrkt&CVID=mrLI8mg&CVID=mrLI8mg&CVID=mrLI8mg&CVID=mk0juLt&CVID=mk0juLt&CVID=mk0juLt&CVID=mfQAh1q&CVID=mfQAh1q&CVID=mfQAh1q&CVID=mfQAh1q&CVID=mfQAh1q&CVID=mfQAh1q&CVID=m72yga4&CVID=m72yga4&CVID=m72yga4&CVID=m72yga4&CVID=m72yga4&CVID=m72yga4&CVID=m72yga4&CVID=m72yga4&CVID=m5SAiap"
+	  />
+  <reference
+	  title="Ramp servicing publication (RSP)"
+	  url="https://eservices.aero.bombardier.com/wps/wcm/connect/eServices/3a1c001a-2e28-423c-ad16-c50de497592f/A220-RSP-Issue068-01-27Jun2019.PDF?MOD=AJPERES&CVID=mKpWR7M&CVID=mxxhQzP&CVID=mu3wz.z&CVID=mu3wz.z&CVID=mfQATsZ&CVID=mfQATsZ&CVID=mfQATsZ&CVID=mfQATsZ&CVID=mfQATsZ&CVID=mfQATsZ&CVID=mfQATsZ&CVID=mfQATsZ&CVID=mfQATsZ&CVID=mdarkuK&CVID=mdarkuK&CVID=m9xVW0a&CVID=m9xVW0a&CVID=m9xVW0a&CVID=m9xVW0a&CVID=m9xVW0a&CVID=m9xVW0a&CVID=lUQgQ32&CVID=lUQgQ32&CVID=lUQgQ32&CVID=lUQgQ32&CVID=lUQgQ32&CVID=lUQgQ32&CVID=lUQgQ32&CVID=lUQgQ32&CVID=lUQgQ32&CVID=lUQgQ32&CVID=lUQgQ32&CVID=lUPOp1U&CVID=lUPOp1U"
+	  />
+  <reference
+	  title="Aircraft recovery publication (ARP)"
+	  url="https://eservices.aero.bombardier.com/wps/wcm/connect/eServices/c8af3669-1bed-4bcf-bf28-e1288f32efa5/A220-ARP-Issue059-02-11Jul2019.PDF?MOD=AJPERES&CVID=mLwHp4Q&CVID=mvdmUFJ&CVID=msYYuIO&CVID=msYYuIO&CVID=mfQAHfl&CVID=mfQAHfl&CVID=mfQAHfl&CVID=mfQAHfl&CVID=mfQAHfl&CVID=mfQAHfl&CVID=mfQAHfl&CVID=mfQAHfl&CVID=mfQAHfl&CVID=mcXP0Ia&CVID=mcXP0Ia&CVID=m9xVxpG&CVID=m9xVxpG&CVID=m9xVxpG&CVID=m9xVxpG&CVID=m9xVxpG&CVID=m9xVxpG&CVID=lUPMVtS&CVID=lUPMVtS&CVID=lUPMVtS&CVID=lUPMVtS&CVID=lUPMVtS&CVID=lUPMVtS&CVID=lUPMVtS&CVID=lUPMVtS&CVID=lUPMVtS&CVID=lUPMVtS&CVID=lUPMVtS&CVID=lUPMVtS&CVID=lUPMVtS"
+	  />
+  <reference
+	  title="Crash - Fire Rescue Card"
+	  url="https://eservices.aero.bombardier.com/wps/wcm/connect/eServices/776e374e-3f26-4bbf-b04c-134b8b3c6c4a/CS100CFRC-MAST-Issue004-16Jun2016.pdf?MOD=AJPERES&CVID=mINO-qj&CVID=lUlVv0V&CVID=lUlVv0V&CVID=lUlVv0V&CVID=lUlVv0V&CVID=lUlVv0V&CVID=lUlVv0V&CVID=lUlVv0V&CVID=lUlVv0V&CVID=lUlVv0V&CVID=lUlVv0V&CVID=lUlVv0V&CVID=lUlVv0V&CVID=lUlVv0V&CVID=lUlVv0V&CVID=lUlVv0V&CVID=lUlVv0V&CVID=lUlVv0V&CVID=lUlVv0V&CVID=lUlVv0V&CVID=lUlVv0V&CVID=lUlVv0V&CVID=lUlVv0V&CVID=lUlVv0V&CVID=lUlVv0V&CVID=lUlVv0V&CVID=lUlVv0V&CVID=lUlVv0V&CVID=lUlVv0V&CVID=lUlVv0V&CVID=lUlVv0V&CVID=lUlVv0V&CVID=lUlVv0V&CVID=lUlVv0V"
+	  />
+  <reference
+	  title="Maintenance facilities and equipment planning publication (MFEPP)"
+	  url="https://eservices.aero.bombardier.com/wps/wcm/connect/eServices/04dd5df4-7c6c-474d-9504-dad8d3283c25/A220-MFEPP-Issue049-20Jun2019.pdf.PDF?MOD=AJPERES&CVID=mKjMK0i&CVID=mxxhE1O&CVID=msSm9Bu&CVID=msSm9Bu&CVID=meX1xaL&CVID=meX1xaL&CVID=meX1xaL&CVID=meX1xaL&CVID=meX1xaL&CVID=meX1xaL&CVID=meX1xaL&CVID=meX1xaL&CVID=meX1xaL&CVID=mcXPgMi&CVID=mcXPgMi&CVID=m9xVKw2&CVID=m9xVKw2&CVID=m9xVKw2&CVID=m9xVKw2&CVID=m9xVKw2&CVID=m9xVKw2&CVID=lUlUS1q&CVID=lUlUS1q&CVID=lUlUS1q&CVID=lUlUS1q&CVID=lUlUS1q&CVID=lUlUS1q&CVID=lUlUS1q&CVID=lUlUS1q&CVID=lUlUS1q&CVID=lUlUS1q&CVID=lUlUS1q&CVID=lUlUS1q&CVID=lUlUS1q"
+	  />
+  <reference
+	  title="C Series aircraft completes minimum speed flight tests"
+	  url="https://www.youtube.com/watch?v=KKCW-5tEgcg"
+	  />
+  <reference
+	  title="TYPE-CERTIFICATE DATA SHEET No. EASA.IM.A.570 For BD-500 (A220 SERIES)"
+	  url="https://www.easa.europa.eu/sites/default/files/dfu/TCDS%20EASA.IM_.A.570%20Issue%2012.pdf"
+	  />
+  <reference
+	  title="TYPE-CERTIFICATE DATA SHEET No. IM.E.090 for PW1500G Series Engines"
+	  url="https://www.easa.europa.eu/sites/default/files/dfu/EASA%20TCDS%20IM%20E%20090_PW1500G_Issue6.pdf"
+	  />
+  <reference
+	title="Airbus A220-300 (CS300) ULTIMATE COCKPIT MOVIE! Just awesome planes [AirClips]"
+	url="https://www.youtube.com/watch?v=r-OtvuRXy74"
+	/>
+		-> 43:18 shows pitch ~2° during cruise at FL390 at IAS 240kts (M.776)
+			-> assume: wing incidence = 1°
+				-> aoa=3° (level flight, 2°+1°)
+				-> Cl = 0.238598352656 at 2° wing aoa
+  <reference
+	title="PW1500G Analysis, The GTF For C-series"
+	url="https://www.airliners.net/forum/viewtopic.php?t=771595"
+	/>
+		-> TSFC ~ 0.55

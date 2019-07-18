@@ -135,5 +135,13 @@ currently unused packages (commented out).
 <number>1</number>
 </comm-radio>
 
+    <radar-altimeter>
+		<name>radar-altimeter</name>
+		<number>0</number>
+	</radar-altimeter>
+    <radar-altimeter>
+		<name>radar-altimeter</name>
+		<number>1</number>
+	</radar-altimeter>
 
 </PropertyList>
