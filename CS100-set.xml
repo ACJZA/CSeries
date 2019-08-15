@@ -65,7 +65,18 @@
                     <position-z-m>-1.59743</position-z-m>
                     <jetway-hood-deg>5</jetway-hood-deg>
             </door>
-		</model>
+            <rendering>
+                <reflection-enabled type="int">1</reflection-enabled>
+                <reflection-type type="int">2</reflection-type>
+                <reflection-dynamic type="int">1</reflection-dynamic>
+                <reflection-correction type="float">0.1</reflection-correction>
+                <reflection-fresnel type="float">0.5</reflection-fresnel>
+                <reflection-fresnel-factor type="float">1.0</reflection-fresnel-factor>
+                <reflection-rainbow type="float">0.1</reflection-rainbow>
+                <reflection-noise type="float">0.05</reflection-noise>
+                <ambient-correction type="float">0.2</ambient-correction>
+            </rendering>
+        </model>
 		
 		<startup>
                     <splash-texture>Aircraft/CSeries/CS100.png</splash-texture>
@@ -85,6 +96,18 @@
 		<instrumentation>
 			<path>Aircraft/CSeries/Systems/instrumentation.xml</path>
 		</instrumentation>
+        
+        <!-- Save some properties when the simulator is shut down -->
+        <aircraft-data>
+            <path>/sim/rendering/aircraft-reflect</path>
+            <path>/sim/weight[0]/weight-lb</path>
+            <path>/sim/weight[1]/weight-lb</path>
+            <path>/sim/weight[2]/weight-lb</path>
+            <path>/sim/weight[3]/weight-lb</path>
+            <path>/sim/weight[4]/weight-lb</path>
+            <path>/consumables/fuel/tank/level-norm</path>
+            <path>/consumables/fuel/tank[1]/level-norm</path>
+        </aircraft-data>
         
 		<sound>
 			<path>Aircraft/CSeries/Sounds/CSeries-sound.xml</path>
@@ -133,8 +156,8 @@
                     <item>
                         <label>Autostart</label>
                         <binding>
-                        <command>property-toggle</command>
-                        <property>/sim/model/start-idling</property>
+                            <command>nasal</command>
+                            <script>autochecklist.complete_checklists("startup");</script>
                         </binding>
                     </item>
                     <item>
@@ -260,6 +283,8 @@
                 <thrust-mode type="int">0</thrust-mode>
                 <reverser-armed type="bool">true</reverser-armed>
             </engine>
+            <start1 type="bool">0</start1>
+            <start2 type="bool">0</start2>
         </engines>
         <flight>
             <ground-lift-dump type="int">1</ground-lift-dump>
@@ -285,6 +310,7 @@
             <bleed-source type="int">0</bleed-source>
             <ram-air-turbine type="bool">false</ram-air-turbine>
             <ram-air-turbine-cover type="bool">false</ram-air-turbine-cover>
+            <APU-bleed type="bool">0</APU-bleed>
         </pneumatic>
                       <switches>
 			<no-smoking-sign type="bool">true</no-smoking-sign>
@@ -378,6 +404,9 @@
                 <tyresmoke>
                     <file>Aircraft/CSeries/Nasal/tyresmoke.nas</file>
                 </tyresmoke>
+            <autochecklist>
+                <file>Aircraft/Generic/autochecklist.nas</file>
+            </autochecklist>
     </nasal>	
     
     <aircraft>

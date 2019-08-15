@@ -19,6 +19,50 @@
 		<min-m>0</min-m>
 		<max-m>500</max-m>
 	</animation>
+        <!--Button Lights Need Power!-->
+    <animation>
+	<type>select</type>
+	<object-name>lgen.off</object-name>
+	<object-name>rgen.off</object-name>
+	<object-name>apugen.off</object-name>
+	<object-name>extpwr.off</object-name>
+	<object-name>apubleed.off</object-name>
+	<object-name>lbleed.off</object-name>
+	<object-name>rbleed.off</object-name>
+	<object-name>cabinpwr.off</object-name>
+	<object-name>windowheat.off</object-name>
+	<object-name>gravXFR.off</object-name>
+        <condition>
+            <equals>
+                <property>/systems/electrical/left-bus</property>
+                <value>0</value>
+            </equals>
+        </condition>
+    </animation>
+    <animation>
+	<type>select</type>
+	<object-name>lgen</object-name>
+	<object-name>rgen</object-name>
+	<object-name>apugen</object-name>
+	<object-name>extpwr</object-name>
+	<object-name>apubleed</object-name>
+	<object-name>lbleed</object-name>
+	<object-name>rbleed</object-name>
+	<object-name>cabinpwr</object-name>
+	<object-name>windowheat.L</object-name>
+	<object-name>windowheat.WL</object-name>
+	<object-name>windowheat.WR</object-name>
+	<object-name>windowheat.R</object-name>
+	<object-name>gravXFR</object-name>
+        <condition>
+            <not-equals>
+                <property>/systems/electrical/left-bus</property>
+                <value>0</value>
+            </not-equals>
+        </condition>
+    </animation>
+        
+        
         <!--Lights panel-->
         <!--Exterior Lts-->
     <animation>
@@ -686,8 +730,22 @@
 	</action>
     </animation>
     <animation>
-	<type>textranslate</type>
+	<type>texmultiple</type>
 	<object-name>apubleed</object-name>
+<!--AVAIL-->
+  		<transform>
+   		 <subtype>textranslate</subtype>
+		<property>controls/APU/knob</property>
+		<factor>0.025</factor>
+  		<axis>
+  	  		<x>1</x>
+  	 		 <y>0</y>
+  	  		<z>0</z>
+  		</axis>
+ 		 </transform>
+<!--IN USE-->
+  		<transform>
+   		 <subtype>textranslate</subtype>
 		<property>controls/pneumatic/APU-bleed</property>
 		<factor>0.025</factor>
   		<axis>
@@ -695,6 +753,7 @@
   	 		 <y>0</y>
   	  		<z>0</z>
   		</axis>
+ 		 </transform>
     </animation>
     <animation>
 	<type>rotate</type>
@@ -738,8 +797,22 @@
 	</action>
     </animation>
     <animation>
-	<type>textranslate</type>
-	<object-name>apugen</object-name>
+	<type>texmultiple</type>
+        <object-name>apugen</object-name>
+<!--AVAIL-->
+  		<transform>
+   		 <subtype>textranslate</subtype>
+		<property>controls/APU/knob</property>
+		<factor>0.025</factor>
+  		<axis>
+  	  		<x>1</x>
+  	 		 <y>0</y>
+  	  		<z>0</z>
+  		</axis>
+ 		 </transform>
+<!--IN USE-->
+  		<transform>
+   		 <subtype>textranslate</subtype>
 		<property>controls/electric/APU-generator</property>
 		<factor>0.025</factor>
   		<axis>
@@ -747,6 +820,7 @@
   	 		 <y>0</y>
   	  		<z>0</z>
   		</axis>
+ 		 </transform>
     </animation>
     <animation>
 	<type>pick</type>

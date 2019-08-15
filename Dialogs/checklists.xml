@@ -2,45 +2,45 @@
 
 <PropertyList>
 
-	<checklist>  
+<checklist>  
     <title>Checks before engine start</title>
-
+<!--
 	<item>
 		<name>Preflight check</name>	
-    <value>COMPLETED</value>
-	</item>
+                <value>COMPLETED</value>
+	</item>-->
 
     <item>
       <name>All Doors</name>
       <value>CLOSED</value>
-      <condition>
-        <and>
-            <equals>
-                <property>sim/model/door-positions/cargo/position-norm</property>
-                <value>0</value>
-            </equals>
-            <equals>
-                <property>sim/model/door-positions/cargoR/position-norm</property>
-                <value>0</value>
-            </equals>
-            <equals>
-                <property>sim/model/door-positions/pax-left/position-norm</property>
-                <value>0</value>
-            </equals>
-            <equals>
-                <property>sim/model/door-positions/pax-right/position-norm</property>
-                <value>0</value>
-            </equals>
-            <equals>
-                <property>sim/model/door-positions/rear-left/position-norm</property>
-                <value>0</value>
-            </equals>
-            <equals>
-                <property>sim/model/door-positions/rear-right/position-norm</property>
-                <value>0</value>
-            </equals>
-        </and>
-      </condition>
+        <condition>
+            <and>
+                <equals>
+                    <property>sim/model/door-positions/cargo/position-norm</property>
+                    <value>0</value>
+                </equals>
+                <equals>
+                    <property>sim/model/door-positions/cargoR/position-norm</property>
+                    <value>0</value>
+                </equals>
+                <equals>
+                    <property>sim/model/door-positions/pax-left/position-norm</property>
+                    <value>0</value>
+                </equals>
+                <equals>
+                    <property>sim/model/door-positions/pax-right/position-norm</property>
+                    <value>0</value>
+                </equals>
+                <equals>
+                    <property>sim/model/door-positions/rear-left/position-norm</property>
+                    <value>0</value>
+                </equals>
+                <equals>
+                    <property>sim/model/door-positions/rear-right/position-norm</property>
+                    <value>0</value>
+                </equals>
+            </and>
+        </condition>
     </item>
 
     <item>
@@ -86,29 +86,17 @@
         <value>1</value>
       </binding>
     </item>
-
+<!--
     <item>
-      <name>Avionics</name>
-      <value>CHECK Running</value><!--
-      <marker>
-        <x-m>-0.900</x-m>
-        <y-m>-0.2449</y-m>
-        <z-m>0.1070</z-m>
-        <scale>2.30</scale>
-      </marker>--><!--
+      <name>Avionics (PFD/MFD)</name>
+      <value>Check Running</value>
       <condition>
-				<and>
-        	<equals>
-          	<property>controls/electric/ammeter-switch</property>
-          	<value>0</value>
-        	</equals>
-					<greater-than>
-          	<property>systems/electrical/volts</property>
-          	<value>20</value>
-					</greater-than>
-				</and>
-      </condition>-->
-    </item>
+          <greater-than-equals>
+                <property>systems/electrical/left-bus</property>
+                <value>10</value>
+            </greater-than-equals>
+        </condition>
+    </item>-->
 
   </checklist>
    
@@ -206,44 +194,46 @@
 
   </checklist>
 
-  <checklist>
-    <title>Engines start procedure</title>
-    <item>
-      <name>APU Start Procedure</name>
-      <value>COMPLETED</value>
-      <condition>
-          <and>
-        <equals>
-            <property>engines/apu/running</property>
-          <value>1</value>
-        </equals>
-        <equals>
-            <property>controls/electric/APU-generator</property>
-          <value>1</value>
-        </equals>
-        <equals>
-		<property>controls/pneumatic/APU-bleed</property>
-          <value>1</value>
-        </equals>
-    </and>
-      </condition>
+    <checklist>
+        <title>Engines start procedure</title>
+        
+        
+        <item>
+        <name>APU Start Procedure</name>
+        <value>COMPLETED</value>
+        <condition>
+            <and>
+                <equals>
+                    <property>engines/apu/running</property>
+                <value>1</value>
+                </equals>
+                <equals>
+                    <property>controls/electric/APU-generator</property>
+                    <value>1</value>
+                </equals>
+                <equals>
+                    <property>controls/pneumatic/APU-bleed</property>
+                    <value>1</value>
+                </equals>
+            </and>
+        </condition>
     </item>
 
-    <item>
-      <name>Strobe Light</name>
-      <value>ON</value>
-      <condition>
-        <equals>
-		<property>controls/lighting/strobe</property>
-          <value>1</value>
-        </equals>
-      </condition>
-      <binding>
-        <command>property-assign</command>
-		<property>controls/lighting/strobe</property>
-        <value>1</value>
-      </binding>
-    </item>
+        <item>
+            <name>Strobe Light</name>
+            <value>ON</value>
+            <condition>
+                <equals>
+                    <property>controls/lighting/strobe</property>
+                    <value>1</value>
+                </equals>
+            </condition>
+            <binding>
+                <command>property-assign</command>
+                <property>controls/lighting/strobe</property>
+                <value>1</value>
+            </binding>
+        </item>
     <item>
       <name>Navigation Light</name>
       <value>ON</value>
@@ -260,36 +250,36 @@
       </binding>
     </item>
     <item>
-      <name>Throttle</name>
-      <value>IDLE</value>
-      <marker>
-        <x-m>-0.7256</x-m>
-        <y-m>-0.0901</y-m>
-        <z-m>0.0892</z-m>
-        <scale>3.11</scale>
-      </marker>
-      <condition>
-        <less-than>
-          <property>/controls/engines/engine[0]/throttle</property>
-          <value>0.1</value>
-        </less-than>
-        <less-than>
-          <property>/controls/engines/engine[1]/throttle</property>
-          <value>0.1</value>
-        </less-than>
-      </condition>
-      <binding>
-        <command>property-interpolate</command>
-        <property>/controls/engines/engine[0]/throttle</property>
-        <value>0.05</value>
-        <time>1.0</time>
-      </binding>
-      <binding>
-        <command>property-interpolate</command>
-        <property>/controls/engines/engine[1]/throttle</property>
-        <value>0.05</value>
-        <time>1.0</time>
-      </binding>
+        <name>Throttle</name>
+        <value>IDLE</value>
+        <marker>
+            <x-m>-0.7256</x-m>
+            <y-m>-0.0901</y-m>
+            <z-m>0.0892</z-m>
+            <scale>3.11</scale>
+        </marker>
+        <condition>
+            <less-than>
+            <property>/controls/engines/engine[0]/throttle</property>
+            <value>0.1</value>
+            </less-than>
+            <less-than>
+            <property>/controls/engines/engine[1]/throttle</property>
+            <value>0.1</value>
+            </less-than>
+        </condition>
+        <binding>
+            <command>property-interpolate</command>
+            <property>/controls/engines/engine[0]/throttle</property>
+            <value>0.05</value>
+            <time>1.0</time>
+        </binding>
+        <binding>
+            <command>property-interpolate</command>
+            <property>/controls/engines/engine[1]/throttle</property>
+            <value>0.05</value>
+            <time>1.0</time>
+        </binding>
     </item>
 
     <item>
@@ -313,13 +303,13 @@
       <value>LEFT</value>
       <condition>
           <equals>
-		<property>/controls/engines/start1</property>
+		<property>controls/engines/start1</property>
                 <value>1</value>
             </equals>
       </condition>
       <binding>
         <command>property-assign</command>
-        <property>/controls/engines/start1</property>
+        <property>controls/engines/start1</property>
         <value>1</value>
       </binding>
 			<binding>
@@ -327,13 +317,20 @@
 				<script>cseries.engine1.start()</script>
 			</binding>
     </item>
+    
     <item>
       <name>Observe Left N1</name>
-      <value>Check Spool Up</value>
     </item>
 
     <item>
-        <name>When Left N1 greater/equals 22%</name>
+        <name>Left N1</name>
+      <value>Greater or equals 22%</value>
+      <condition>
+          <greater-than-equals>
+		<property>engines/engine/rpm</property>
+                <value>22</value>
+            </greater-than-equals>
+      </condition>
     </item>
     
 
@@ -342,7 +339,7 @@
       <value>OFF</value>
       <condition><and>
           <equals>
-		<property>/controls/engines/start1</property>
+		<property>controls/engines/start1</property>
                 <value>0</value>
             </equals>
           <equals>
@@ -352,7 +349,7 @@
       </condition>
       <binding>
         <command>property-assign</command>
-        <property>/controls/engines/start1</property>
+        <property>controls/engines/start1</property>
         <value>0</value>
       </binding>
       <binding>
@@ -361,6 +358,7 @@
         <value>0</value>
       </binding>
     </item>
+    
     <item>
       <name>Right Engine Master Switch (Pedestal)</name>
       <value>ON</value>
@@ -396,21 +394,28 @@
 				<script>cseries.engine2.start()</script>
 			</binding>
     </item>
+    
     <item>
       <name>Observe Right N1</name>
-      <value>Check Spool Up</value>
     </item>
 
     <item>
-        <name>When Right N1 greater/equals 22%</name>
+        <name>Right N1</name>
+      <value>Greater or equals 22%</value>
+      <condition>
+          <greater-than-equals>
+		<property>engines/engine[1]/rpm</property>
+                <value>22</value>
+            </greater-than-equals>
+      </condition>
     </item>
 
     <item>
       <name>Engine Start Knob</name>
-      <value>OFF</value>
+      <value>NEUTRAL</value>
       <condition><and>
           <equals>
-		<property>/controls/engines/start1</property>
+		<property>controls/engines/start1</property>
                 <value>0</value>
             </equals>
           <equals>
@@ -420,7 +425,7 @@
       </condition>
       <binding>
         <command>property-assign</command>
-        <property>/controls/engines/start1</property>
+        <property>controls/engines/start1</property>
         <value>0</value>
       </binding>
       <binding>
@@ -1531,5 +1536,14 @@
       </binding>
     </item>
   </checklist>
+  
+    <startup>
+      <index n="0">0</index> <!-- Before starting engines -->
+      <index n="1">1</index> <!-- APU Start -->
+      <index n="2">2</index> <!-- Start engines -->
+    </startup><!--
+    <shutdown>
+      <index n="0">9</index>
+    </startup>-->
   
 </PropertyList>

@@ -297,6 +297,10 @@
 						<property>instrumentation/attitude-indicator[0]/indicated-pitch-deg</property>
 						<value>17</value>
 					</less-than>
+                                        <equals>
+                                            <property>controls/gear/gear-down</property>
+                                            <value>1</value>
+                                        </equals>
 				</and>
 			</condition>
 		</callout>
